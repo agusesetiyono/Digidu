@@ -1,0 +1,11 @@
+$route["learning/"] = "learning/post/38";
+$route["learning/"] = "learning/post/39";
+$route["learning/"] = "learning/post/40";
+$route["learning/"] = "learning/post/37";
+$route["learning/"] = "learning/post/83";
+$route["learning/"] = "learning/post/84";
+$route["learning/"] = "learning/post/92";
+$route["learning/"] = "learning/post/96";
+$route["learning/judul-yang-sangat-panjang"] = "learning/post/103";
+$route["learning/supaya-saya-tahu-adad-1"] = "learning/post/104";
+$route["learning/coba-membuat-sebuah-judul"] = "learning/post/105";

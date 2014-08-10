@@ -1,0 +1,45 @@
+<?php $this->load->view('_blocks/header'); ?>
+<div class="container">
+	<div class="content">
+	
+		<h1>Daftar Kategori Materi
+		
+		</h1>
+		<hr>
+		<div class="row">
+			<div class="span9">
+				<p><?php echo anchor('blog/blog/new_kategori', 'Create Category', array('class' => 'btn btn-default')); ?>
+ &nbsp; 
+ 
+ </p>
+				<table class="table table-striped" id="">
+					<thead>
+						<tr>
+							<th style="width:35px;"><i class="icon-tags"></i> No</th>
+							<th><i class="icon-list"></i> Nama Kategori</th>
+							<th><i class="icon-cog"></i> Action</th>
+							
+						</tr>
+					</thead>
+					<tbody>
+					
+						<?php 
+						$i = 1;
+						foreach($category as $kategori) { ?>
+						<tr>
+							<td><?php echo $i++ ?></td>
+							<td><?php echo $kategori->nama_kategori ?> (<?php echo $kategori->jml_kategori ?>)</td>
+							<td>
+								
+							</td>
+						</tr>
+						<?php } ?>
+					</tbody>
+				</table>
+			
+	
+			</div>
+		</div>
+	</div>
+
+<?php $this->load->view('_blocks/footer'); ?>
