@@ -185,7 +185,7 @@
 				<h4 class="modal-title" id="login-modal">Login ke DIGIDU</h4>
 			</div>
 			<div class="modal-body">
-				<form id="login" name="login" method="post" action="sendemail.php">
+				<form id="login-modal" name="login" method="post" action="sendemail.php">
 					<div class="form-group">
 					<label for="">Username </label>
 					<input name="Username" class="form-control" required="required" placeholder="Username" type="text">
