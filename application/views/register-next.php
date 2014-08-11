@@ -3,12 +3,7 @@
  <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.2.js"></script>
  <script src="<?php echo base_url(); ?>assets/js/jquery-ui.js"></script> 
  
-
-
-
-
 <?php 
-echo base_url().'foto';
 $this->load->view('_blocks/header'); ?>
 
 <section id="page-breadcrumb">

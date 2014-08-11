@@ -78,11 +78,12 @@
                     <li class="dropdown">
                         <a href="tentang.html">Tentang Kami</a>
                     </li>
-
+					<?php
+if($this->auth->is_logged_in()) { ?>
                     <li>
                         <a href="<?php echo base_url('digidu/profile'); ?> "><i class="fa fa-user"></i>&nbsp;&nbsp;Akun Saya </a>
                     </li>
-
+<?php } ?>
                 </ul>
             </div>
 

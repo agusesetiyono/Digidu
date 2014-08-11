@@ -11,13 +11,47 @@ class Digidu extends CI_Controller {
 	{
 		$this->load->view('home');
 	}
+	
+	
 	public function login()
 	{
-	$data = array(
-	'post_url' => 'blog/home/login',
-	);
-	$this->load->view('login',$data);
+		$this->form_validation->set_rules('username', 'Username', 'trim|required');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required');
+		$this->form_validation->set_error_delimiters(' <span style="color:#FF0000">', '</span>');
+		
+		
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->load->view('login');
+		}
+		else
+		{
+			$username = $this->input->post('username');
+			$password = $this->input->post('password');
+			$success = $this->auth->do_login($username,$password);
+			if($success)
+			{		
+				if ( $this->session->userdata('level') == 1){
+				redirect('blog/blog/index');
+				}
+				elseif ($this->session->userdata('level') == 2){
+				redirect('digidu/index');
+				}
+				else {
+				echo "kelompok lain";
+				}
+			}
+			
+			else
+			{
+				$data['login_info'] = "Maaf, username dan password salah!";
+				$data['site_name'] = "Blog";
+				$this->load->view('login',$data);		
+			}
+		}
 	}
+	
+	
 	public function register()
 	{
 	if( FALSE == ($data = $this->session->flashdata('notif'))){

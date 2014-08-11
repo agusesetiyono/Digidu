@@ -185,19 +185,19 @@
 				<h4 class="modal-title" id="login-modal">Login ke DIGIDU</h4>
 			</div>
 			<div class="modal-body">
-				<form id="login" name="login" method="post" action="sendemail.php">
+				<?php echo form_open("digidu/login", array('id' => 'login')); ?>
 					<div class="form-group">
 					<label for="">Username </label>
-					<input name="Username" class="form-control" required="required" placeholder="Username" type="text">
+					<input name="username" class="form-control" required="required" placeholder="Username" type="text">
 					</div>
 					<div class="form-group">
 					<label for="">Password</label>
 					<input name="password" class="form-control" required="required" placeholder="Password" type="password">
 					</div>
 					<div class="form-group" style="margin-top: 40px;">
-					<?php echo anchor('digidu','LOGIN','class="btn btn-submit"'); ?>
+					<button class="btn btn-submit" type="submit">LOGIN</button>
 					</div>
-				</form>
+				<?php echo form_close(); ?>
 			</div>
 		</div>
 	</div>
