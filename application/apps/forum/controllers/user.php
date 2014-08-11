@@ -27,18 +27,7 @@ class User extends CI_Controller {
 	
     public function join()
     {
-        // event register button
-        if ($this->input->post('btn-reg')) 
-        {
-            $this->user_model->register();
-            if ($this->user_model->error_count != 0) {
-                $this->data['error']    = $this->user_model->error;
-            } else {
-                $this->session->set_userdata('tmp_success', 1);
-                redirect('forum/user/join');
-            }
-        }
-        
+                
         $tmp_success = $this->session->userdata('tmp_success');
         if ($tmp_success != NULL) {
             // new user created
@@ -49,19 +38,24 @@ class User extends CI_Controller {
         // event login button
         if ($this->input->post('btn-login'))
         {
-            $this->load->model('user_model');
+            
+			$this->load->model('user_model');
             $this->user_model->check_login();
+			
+			
             if ($this->user_model->error_count != 0) {
                 $this->data['error_login']    = $this->user_model->error;
             } else {
-                redirect('forum/user');
+                redirect('forum/thread');
             }
+			
+			
         }
         
         $this->data['title']   = 'User Join or Login :: '.CIBB_TITLE;
         $this->load->view('header', $this->data);
         $this->load->view('user/join');
-        $this->load->view('footer');
+       
     }
     
     public function logout()
