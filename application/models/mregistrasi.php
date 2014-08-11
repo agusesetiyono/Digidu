@@ -43,7 +43,7 @@ class Mregistrasi extends CI_Model
 	function get_data_user($id)
 	{
 	$q=$this->db->query("
-	select * from user where username = '$id'
+	select * from user where id_user = '$id'
 	");
 	$this->db->close();
 	return $q;

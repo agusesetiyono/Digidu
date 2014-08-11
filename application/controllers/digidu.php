@@ -13,7 +13,10 @@ class Digidu extends CI_Controller {
 	}
 	public function login()
 	{
-		$this->load->view('login');
+	$data = array(
+	'post_url' => 'blog/home/login',
+	);
+	$this->load->view('login',$data);
 	}
 	public function register()
 	{
@@ -100,18 +103,18 @@ class Digidu extends CI_Controller {
 	{
 	$this->auth->restrict();
 	$level = $this->session->userdata('level');	
-	$id = $this->session->userdata('id');
+	$id = $this->session->userdata('id_user');
 	$x = $this->Mregistrasi->get_data_user($id);
 	
 	$data=array(
 	'tgl_lahir'=>$x->row()->tgl_lahir,
-	'jenis_kelamin' => $x->row()->tgl_lahirjenis_kelamin,
-	'profesi' => $x->row()->tgl_lahirprofesi,
-	'alamat' =>$x->row()->tgl_lahiralamat ,
-	'kabupaten' => $x->row()->tgl_lahirkabupaten,
-	'provinsi' => $x->row()->tgl_lahirprovinsi,
+	'jenis_kelamin' => $x->row()->jenis_kelamin,
+	'profesi' => $x->row()->profesi,
+	'alamat' =>$x->row()->alamat ,
+	'kabupaten' => $x->row()->kabupaten,
+	'provinsi' => $x->row()->provinsi,
 	'foto' => '',
-	'hp' => $x->row()->tgl_lahirhp,	
+	'hp' => $x->row()->hp,	
 	);
 	
 	$this->load->view('profile',$data);
