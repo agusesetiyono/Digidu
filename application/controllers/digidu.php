@@ -98,7 +98,23 @@ class Digidu extends CI_Controller {
 
 	public function profile()
 	{
-		$this->load->view('profile');
+	$this->auth->restrict();
+	$level = $this->session->userdata('level');	
+	$id = $this->session->userdata('id');
+	$x = $this->Mregistrasi->get_data_user($id);
+	
+	$data=array(
+	'tgl_lahir'=>$x->row()->tgl_lahir,
+	'jenis_kelamin' => $x->row()->tgl_lahirjenis_kelamin,
+	'profesi' => $x->row()->tgl_lahirprofesi,
+	'alamat' =>$x->row()->tgl_lahiralamat ,
+	'kabupaten' => $x->row()->tgl_lahirkabupaten,
+	'provinsi' => $x->row()->tgl_lahirprovinsi,
+	'foto' => '',
+	'hp' => $x->row()->tgl_lahirhp,	
+	);
+	
+	$this->load->view('profile',$data);
 	}
 
 }

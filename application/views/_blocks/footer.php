@@ -51,12 +51,12 @@
         <script>window.jQuery || document.write('<script src="<?php echo base_url(); ?>assets/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
      
 
-        <script src="<?php echo base_url(); ?>assets/js/jquery.js" type="text/javascript"></script>     
+        <script src="<?php echo base_url(); ?>assets/js/jquery.js" type="text/javascript"></script>  -->    
         <script src="<?php echo base_url(); ?>assets/js/vendor/bootstrap.min.js"></script>
         <script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>assets/js/gmaps.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/wow.min.js"type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>assets/js/main.js"></script> -->
+        <script src="<?php echo base_url(); ?>assets/js/main.js"></script> 
 
 		
 
