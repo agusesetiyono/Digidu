@@ -24,7 +24,7 @@ class Digidu extends CI_Controller {
 	{
 	$notifikasi = $data;
 	}
-<<<<<<< HEAD
+
 	
 	$data = array(
 	'post_url' => 'digidu/save_registrasi',
@@ -76,24 +76,24 @@ class Digidu extends CI_Controller {
 		
 	$data=array(
 	'tgl_lahir'=>$post['tgl_lahir'],
-	'jenis_kelamin'=> ,
-	'profesi' => ,
-	'alamat' => ,
-	'kabupaten' => ,
-	'provinsi' => ,
-	'foto' => ,
-	'hp' => ,	
+	'jenis_kelamin' => $post['jenis_kelamin'],
+	'profesi' => $post['profesi'],
+	'alamat' =>$post['alamat'] ,
+	'kabupaten' => $post['kabupaten'],
+	'provinsi' => $post['provinsi'],
+	'foto' => $post['foto'],
+	'hp' => $post['hp'],	
 	);
 	
 	}
 	
 	
-=======
+
 	public function profile()
 	{
 		$this->load->view('profile');
 	}
->>>>>>> origin/master
+
 }
 
 /* End of file welcome.php */
