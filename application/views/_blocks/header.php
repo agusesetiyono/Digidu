@@ -80,7 +80,7 @@
                     </li>
 
                     <li>
-                        <?php echo anchor('digidu/profile', 'Akun Saya'); ?>
+                        <?php echo anchor('digidu/profile', 'Akun Saya'); ?> <i class="fa fa-sign-out"></i>
                     </li>
 
                 </ul>

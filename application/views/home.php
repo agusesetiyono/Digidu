@@ -7,7 +7,7 @@
 					<h1>Mari belajar bersama kami</h1>
 					<p><strong>DIGIDU "Digital Education"</strong> merupakan media pembelajaran yang dikonsep dengan tampilan multimedia dalam aplikasi buku digital. Materi yang ada di dalamnya merupakan materi umum yang bisa digunakan semua kalangan.</p>
 					<a href="<?php echo base_url('digidu/register'); ?>" class="btn btn-common">GABUNG DENGAN KAMI</a>
-					<a href="<?php echo base_url('digidu/login'); ?>" class="btn btn-alt">LOGIN</a>
+					<button class="btn btn-alt" data-toggle="modal" data-target="#login-modal">LOGIN</button>
 				</div>
 				<img src="<?php base_url(); ?>assets/img/school.png" class="slider-hill" alt="slider image">
 				<img src="<?php base_url(); ?>assets/img/digidu_learn_child.png" height="264" width="300" class="slider-house" alt="slider image">
@@ -83,10 +83,8 @@
 				<iframe class="fb" src="https://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FDigidu.Indonesia&width=300&height=395&colorscheme=light&show_faces=false&header=false&stream=true&show_border=false" scrolling="yes" frameborder="0" style="overflow:hidden;" allowTransparency="true"></iframe>
 			</div>
 			<div class="col-md-6">
-
 				<a class="twitter-timeline"  href="https://twitter.com/DIGIDUindonesia"  data-widget-id="471082890650849281">Tweet oleh @DIGIDUindonesia</a>
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
 			</div>
 		</div>
 	</div>
@@ -177,5 +175,32 @@
 	</div>
 </section>     
 
+
+<!-- Modal Login-->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modal" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title" id="login-modal">Login ke DIGIDU</h4>
+			</div>
+			<div class="modal-body">
+				<form id="login" name="login" method="post" action="sendemail.php">
+					<div class="form-group">
+					<label for="">Username </label>
+					<input name="Username" class="form-control" required="required" placeholder="Username" type="text">
+					</div>
+					<div class="form-group">
+					<label for="">Password</label>
+					<input name="password" class="form-control" required="required" placeholder="Password" type="password">
+					</div>
+					<div class="form-group" style="margin-top: 40px;">
+					<?php echo anchor('digidu','LOGIN','class="btn btn-submit"'); ?>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
 
 <?php $this->load->view('_blocks/footer'); ?>

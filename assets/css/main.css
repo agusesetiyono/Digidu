@@ -62,6 +62,9 @@ h2 {
 h3 {
   font-size: 18px;
 }
+h4 {
+  color: #005ca1;
+}
 .overflow {
   overflow: hidden;
 }
@@ -431,15 +434,15 @@ ul.sub-menu {
 }
 .btn-submit {
   width: 100%;
-  background-color: #005ca1;
+  background-color: #0088ee;
   color: #fff;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 900;
   letter-spacing: 5px;
   text-transform: uppercase;
   border-radius: 3px;
   margin-top: 5px;
-  border-bottom: 3px solid #2f9697;
+  border-bottom: 3px solid #004d88;
   box-shadow: none;
   padding: 10px;
 }
