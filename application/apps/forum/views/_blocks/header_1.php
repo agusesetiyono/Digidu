@@ -57,7 +57,7 @@
                         <?php echo anchor('blog/learning', 'Artikel'); ?>
                     </li>  
 
-                    <li class="dropdown"><a href="<?php echo base_url('forum/thread'); ?>">Forum <i class="fa fa-angle-down"></i></a>
+                    <li class="dropdown"><a href="forum.html">Forum <i class="fa fa-angle-down"></i></a>
                         <ul role="menu" class="sub-menu">
                             <li><a href="#">Coming Soon</a></li>
                         </ul>
@@ -78,21 +78,14 @@
                     <li class="dropdown">
                         <a href="tentang.html">Tentang Kami</a>
                     </li>
-					<?php
-if($this->auth->is_logged_in()) { ?>
+
                     <li>
                         <a href="<?php echo base_url('digidu/profile'); ?> "><i class="fa fa-user"></i>&nbsp;&nbsp;Akun Saya </a>
                     </li>
-<?php } ?>
+
                 </ul>
             </div>
 
         </div>
     </div>
 </header>
-
-	
-<!--
-<script src="<?php echo base_url(); ?>assets/css/jquery-ui.css"></script>
- <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.2.js"></script>
- <script src="<?php echo base_url(); ?>assets/js/jquery-ui.js"></script> !-->
