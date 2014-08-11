@@ -106,8 +106,8 @@ class Thread_model extends CI_Model {
         
     public function get_posts($thread_id, $start, $limit)
     {
-        $sql = "SELECT a.*, b.username, b.id as user_id FROM ".TBL_POSTS." a, ".TBL_USERS." b 
-                WHERE a.thread_id = ".$thread_id." AND a.author_id = b.id 
+        $sql = "SELECT a.*, b.username, b.id_user as user_id FROM ".TBL_POSTS." a, ".TBL_USERS." b 
+                WHERE a.thread_id = ".$thread_id." AND a.author_id = b.id_user 
                 ORDER BY a.date_add ASC LIMIT ".$start.", ".$limit;
         return $this->db->query($sql)->result();
     }

@@ -14,7 +14,7 @@ class User_model extends CI_Model {
         $user_id = $this->session->userdata('cibb_user_id');
         // get roles
         if ($user_id) {
-            $row = $this->db->get_where(TBL_USERS, array('id' => $user_id))->row();
+            $row = $this->db->get_where(TBL_USERS, array('id_user' => $user_id))->row();
             $roles = $this->db->get_where(TBL_ROLES, array('id' => $row->role_id))->row_array();
             foreach ($roles as $key => $value) {
                 $this->session->set_userdata($key, $value);
@@ -43,7 +43,7 @@ class User_model extends CI_Model {
         if ( ($query->num_rows() == 1) && ($plain_password == MD5($row['password'])) ) {
             $row = $query->row();
             $this->session->set_userdata('cibb_logged_in', 1);
-            $this->session->set_userdata('cibb_user_id'  , $row->id);
+            $this->session->set_userdata('cibb_user_id'  , $row->id_user);
             $this->session->set_userdata('cibb_username' , $row->username);
 			$this->session->set_userdata('cibb_user_roleid' , $row->role_id);
             

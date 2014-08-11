@@ -10,12 +10,12 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- Dumping database structure for cibb
-CREATE DATABASE IF NOT EXISTS `cibb` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `cibb`;
+-- Dumping database structure for digidu
+CREATE DATABASE IF NOT EXISTS `digidu` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `digidu`;
 
 
--- Dumping structure for table cibb.cibb_categories
+-- Dumping structure for table digidu.cibb_categories
 CREATE TABLE IF NOT EXISTS `cibb_categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `parent_id` int(11) NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `cibb_categories` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
--- Dumping data for table cibb.cibb_categories: ~13 rows (approximately)
+-- Dumping data for table digidu.cibb_categories: ~13 rows (approximately)
 /*!40000 ALTER TABLE `cibb_categories` DISABLE KEYS */;
 INSERT INTO `cibb_categories` (`id`, `parent_id`, `name`, `slug`, `date_added`, `date_edit`, `publish`) VALUES
 	(11, 0, 'Web Programming', 'web-programming', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
@@ -46,7 +46,7 @@ INSERT INTO `cibb_categories` (`id`, `parent_id`, `name`, `slug`, `date_added`, 
 /*!40000 ALTER TABLE `cibb_categories` ENABLE KEYS */;
 
 
--- Dumping structure for table cibb.cibb_posts
+-- Dumping structure for table digidu.cibb_posts
 CREATE TABLE IF NOT EXISTS `cibb_posts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `thread_id` int(11) NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `cibb_posts` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=latin1;
 
--- Dumping data for table cibb.cibb_posts: ~58 rows (approximately)
+-- Dumping data for table digidu.cibb_posts: ~58 rows (approximately)
 /*!40000 ALTER TABLE `cibb_posts` DISABLE KEYS */;
 INSERT INTO `cibb_posts` (`id`, `thread_id`, `reply_to_id`, `author_id`, `post`, `date_add`, `date_edit`) VALUES
 	(2, 2, 0, 5, 'Hello!\r\nI have SMF 2.0.2\r\nI\'ve been tweaking it a lot and now it\'s almost perfect. But one last thing which kinda bothers me (though it might not be so crucial for other, I don\'t know...).\r\nThe left part of body of each post is somewhat different in color. I mean that\'s where you see the name of the poster, etc.\r\nIn my case, it\'s all ONE solid color from wall to wall, so to speak. There\'s no any border or a distinction between the part where the text resides and where the posters\' stats are. ', '2012-08-04 05:25:16', '0000-00-00 00:00:00'),
@@ -122,7 +122,7 @@ INSERT INTO `cibb_posts` (`id`, `thread_id`, `reply_to_id`, `author_id`, `post`,
 /*!40000 ALTER TABLE `cibb_posts` ENABLE KEYS */;
 
 
--- Dumping structure for table cibb.cibb_roles
+-- Dumping structure for table digidu.cibb_roles
 CREATE TABLE IF NOT EXISTS `cibb_roles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `role` varchar(50) NOT NULL,
@@ -139,17 +139,17 @@ CREATE TABLE IF NOT EXISTS `cibb_roles` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
--- Dumping data for table cibb.cibb_roles: ~4 rows (approximately)
+-- Dumping data for table digidu.cibb_roles: ~4 rows (approximately)
 /*!40000 ALTER TABLE `cibb_roles` DISABLE KEYS */;
 INSERT INTO `cibb_roles` (`id`, `role`, `admin_area`, `thread_create`, `thread_edit`, `thread_delete`, `post_create`, `post_edit`, `post_delete`, `role_create`, `role_edit`, `role_delete`) VALUES
-	(2, 'administrator', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-	(3, 'member', 0, 1, 0, 0, 1, 0, 0, 0, 0, 0),
-	(4, 'editor', 0, 0, 1, 1, 0, 1, 1, 0, 0, 0),
-	(5, 'test', 1, 1, 0, 0, 0, 0, 0, 0, 0, 0);
+	(1, 'administrator', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+	(2, 'member', 0, 1, 0, 0, 1, 0, 0, 0, 0, 0),
+	(3, 'editor', 0, 0, 1, 1, 0, 1, 1, 0, 0, 0),
+	(4, 'test', 1, 1, 0, 0, 0, 0, 0, 0, 0, 0);
 /*!40000 ALTER TABLE `cibb_roles` ENABLE KEYS */;
 
 
--- Dumping structure for table cibb.cibb_threads
+-- Dumping structure for table digidu.cibb_threads
 CREATE TABLE IF NOT EXISTS `cibb_threads` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category_id` int(11) NOT NULL,
@@ -161,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `cibb_threads` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
--- Dumping data for table cibb.cibb_threads: ~11 rows (approximately)
+-- Dumping data for table digidu.cibb_threads: ~11 rows (approximately)
 /*!40000 ALTER TABLE `cibb_threads` DISABLE KEYS */;
 INSERT INTO `cibb_threads` (`id`, `category_id`, `title`, `slug`, `date_add`, `date_edit`, `date_last_post`) VALUES
 	(2, 19, 'Need help for forum styling using phpBB', 'need-help-for-forum-styling-using-phpbb', '2012-08-04 05:25:16', '0000-00-00 00:00:00', '2012-08-04 05:25:16'),
@@ -178,29 +178,7 @@ INSERT INTO `cibb_threads` (`id`, `category_id`, `title`, `slug`, `date_add`, `d
 /*!40000 ALTER TABLE `cibb_threads` ENABLE KEYS */;
 
 
--- Dumping structure for table cibb.cibb_users
-CREATE TABLE IF NOT EXISTS `cibb_users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `role_id` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
-
--- Dumping data for table cibb.cibb_users: ~7 rows (approximately)
-/*!40000 ALTER TABLE `cibb_users` DISABLE KEYS */;
-INSERT INTO `cibb_users` (`id`, `role_id`, `username`, `password`) VALUES
-	(3, 4, 'aditia', 'bGIjtqSdvhyjogZPtZC1VEZxP9hIEdVCeCYXlzGLVaVdBCbDItITgkPUJoKRZRwluI2WDhyfyY2W5tGZA6/4Iw=='),
-	(5, 2, 'admin', '5ije++4mtsC2xnJpCaZOfdFSPCeEFe5PXSSGezjb0PjbSOHiXi7sb5qvsggG6bvYQ1twmu+REoL6610IdbKxHQ=='),
-	(6, 2, 'guest123', 'q7gHcAduV4WlDr44L5pXcXL69LnA3SdZN9fxOJKhAQDJmxkG0G2uqn8m8MJaZmNOpAiq+IKFZng4jgUoslivOw=='),
-	(7, 2, 'donny', 'yeWzF671N2NMSYvkz15JA4Kiwss6PwoBkEygDcP/tR0WHvXd72MZFRbSxGRopE00mUW1IBlyl5O2DEifteOmDw=='),
-	(8, 3, 'test123', 'lezdLKUaX29CLmTsV2tGzPH3F9ejw6yVyKBELV+LzI0ud0OrGf87+7wrXSRXOSadCmLg657sprBt2Ujs1NEmPg=='),
-	(9, 2, 'alifable', 'Ge61ejuEjfjQiI75R7yWIyrINsKPGr/bTgj0F+UJQuNPWYHj3NfJZ2M2io9eYtB7HKI73p7SEh4AkyZLsJxTxg=='),
-	(10, 2, 'aaaaa', '594f803b380a41396ed63dca39503542');
-/*!40000 ALTER TABLE `cibb_users` ENABLE KEYS */;
-
-
--- Dumping structure for table cibb.ci_sessions
+-- Dumping structure for table digidu.ci_sessions
 CREATE TABLE IF NOT EXISTS `ci_sessions` (
   `session_id` varchar(40) NOT NULL DEFAULT '0',
   `ip_address` varchar(45) NOT NULL DEFAULT '0',
@@ -211,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
   KEY `last_activity_idx` (`last_activity`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table cibb.ci_sessions: ~10 rows (approximately)
+-- Dumping data for table digidu.ci_sessions: ~10 rows (approximately)
 /*!40000 ALTER TABLE `ci_sessions` DISABLE KEYS */;
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
 	('1a3d817f91798c69c754bc623a5c053b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.1; rv:31.0) Gecko/20100101 Firefox/31.0', 1406538937, ''),
@@ -227,13 +205,13 @@ INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activ
 /*!40000 ALTER TABLE `ci_sessions` ENABLE KEYS */;
 
 
--- Dumping structure for table cibb.level
+-- Dumping structure for table digidu.level
 CREATE TABLE IF NOT EXISTS `level` (
   `level_id` int(11) NOT NULL,
   `level_nama` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table cibb.level: ~3 rows (approximately)
+-- Dumping data for table digidu.level: ~3 rows (approximately)
 /*!40000 ALTER TABLE `level` DISABLE KEYS */;
 INSERT INTO `level` (`level_id`, `level_nama`) VALUES
 	(1, 'Administrator'),
@@ -242,7 +220,7 @@ INSERT INTO `level` (`level_id`, `level_nama`) VALUES
 /*!40000 ALTER TABLE `level` ENABLE KEYS */;
 
 
--- Dumping structure for table cibb.menu
+-- Dumping structure for table digidu.menu
 CREATE TABLE IF NOT EXISTS `menu` (
   `menu_id` int(11) NOT NULL,
   `menu_nama` varchar(100) NOT NULL,
@@ -250,7 +228,7 @@ CREATE TABLE IF NOT EXISTS `menu` (
   `menu_allowed` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table cibb.menu: ~1 rows (approximately)
+-- Dumping data for table digidu.menu: ~2 rows (approximately)
 /*!40000 ALTER TABLE `menu` DISABLE KEYS */;
 INSERT INTO `menu` (`menu_id`, `menu_nama`, `menu_uri`, `menu_allowed`) VALUES
 	(1, 'Daftar Blog', 'blog/blog/index', '+1+'),
@@ -258,27 +236,7 @@ INSERT INTO `menu` (`menu_id`, `menu_nama`, `menu_uri`, `menu_allowed`) VALUES
 /*!40000 ALTER TABLE `menu` ENABLE KEYS */;
 
 
--- Dumping structure for table cibb.saldo
-CREATE TABLE IF NOT EXISTS `saldo` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `npwp` varchar(50) DEFAULT NULL,
-  `saldo` decimal(10,0) DEFAULT NULL,
-  `tanggal` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
-
--- Dumping data for table cibb.saldo: ~5 rows (approximately)
-/*!40000 ALTER TABLE `saldo` DISABLE KEYS */;
-INSERT INTO `saldo` (`id`, `npwp`, `saldo`, `tanggal`) VALUES
-	(1, '02.500.748.5-124.000', 500000, '2014-03-01 08:20:14'),
-	(2, '02.500.748.5-124.000', 459100, '2014-04-30 00:00:00'),
-	(4, '02.500.748.5-124.000', 418200, '2014-04-30 10:04:31'),
-	(5, '02.500.748.5-124.000', 377300, '2014-05-02 08:05:03'),
-	(6, '02.500.748.5-124.000', 336400, '2014-06-13 13:06:34');
-/*!40000 ALTER TABLE `saldo` ENABLE KEYS */;
-
-
--- Dumping structure for table cibb.tbl_blog
+-- Dumping structure for table digidu.tbl_blog
 CREATE TABLE IF NOT EXISTS `tbl_blog` (
   `id_post` int(3) NOT NULL AUTO_INCREMENT,
   `id_kategori` int(3) NOT NULL,
@@ -290,7 +248,7 @@ CREATE TABLE IF NOT EXISTS `tbl_blog` (
   PRIMARY KEY (`id_post`)
 ) ENGINE=MyISAM AUTO_INCREMENT=106 DEFAULT CHARSET=latin1;
 
--- Dumping data for table cibb.tbl_blog: 11 rows
+-- Dumping data for table digidu.tbl_blog: 11 rows
 /*!40000 ALTER TABLE `tbl_blog` DISABLE KEYS */;
 INSERT INTO `tbl_blog` (`id_post`, `id_kategori`, `judul`, `isi`, `tanggal`, `status`, `uri`) VALUES
 	(38, 1, 'Hambatan Penghantar', '\n<p>Dari pendefinisian besaran R (hambatan) oleh <b>Ohm</b>&nbsp;itu dapat memotivasi para ilmuwan untuk mempelajari&nbsp;sifat-sifat <b>resistif</b> suatu bahan dan hasilnya adalah<b> semua&nbsp;bahan di alam ini memiliki hambatan</b>. Berdasarkan sifat<i>&nbsp;resistivitas</i>nya ini bahan dibagi menjadi tiga yaitu <b>konduktor</b>,<b> isolator</b> dan <b>semikonduktor</b>. <b>Konduktor memiliki&nbsp;hambatan yang kecil</b> sehingga<b> daya hantar listriknya baik</b>.&nbsp;<b>Isolator</b> memiliki <b>hambatan cukup besar </b>sehingga <b>tidak&nbsp;dapat menghantarkan listrik</b>. Sedangkan<b> semikonduktor</b>&nbsp;memiliki sifat <b>diantaranya</b>.</p>\n\n<p>Dari sifat-sifat yang dimiliki, kemudian konduktor&nbsp;banyak di gunakan sebagai penghantar. Bagaimana sifat&nbsp;hambatan penghantar itu?? Melalui eksperimen,<b> hambatan&nbsp;penghantar</b> dipengaruhi oleh tiga besaran yaitu <b>sebanding</b>&nbsp;dengan <b>panjangnya l</b>, <b>berbanding terbalik</b> dengan <b>luas&nbsp;penampangnya A</b> dan tergabung pada<b> jenisnya</b>. Dari&nbsp;besaran-besaran ini dapat dirumuskan sebagai berikut.</p>\n\n<p><img src="http://i1306.photobucket.com/albums/s580/agusesetiyono/Untitled2.png"><br>\n</p>\n\n<p>dengan : R&nbsp; =&nbsp; hambatan penghantar (ohm),&nbsp; l&nbsp; =&nbsp; panjang (m), &nbsp;A&nbsp; =&nbsp; luas penampang penghantar (m2) &nbsp;rho &nbsp;=&nbsp; hambatan jenis (rho.m)</p>\n<hr />\n<p><b><i>Contoh soal:</i></b></p>\n\n<p>Seutas kawat besi panjangnya 20 meter dan luas penampangnya 1 mm2, mempunyai hambatan jenis 10-7 ohmmeter. Jika antara ujung-ujung kawat dipasang beda potensial 60 volt, tentukan kuat arus yang mengalir dalam kawat!</p>\n\n<p><b><i>Jawaban:</i></b></p>\n\n<p><img src="http://i1306.photobucket.com/albums/s580/agusesetiyono/Untitled3.png" style="cursor: nw-resize; height: 298px;"><b><i><br>\n</i></b></p>\n', '2012-11-06 05:47:24', 'published', ''),
@@ -307,15 +265,15 @@ INSERT INTO `tbl_blog` (`id_post`, `id_kategori`, `judul`, `isi`, `tanggal`, `st
 /*!40000 ALTER TABLE `tbl_blog` ENABLE KEYS */;
 
 
--- Dumping structure for table cibb.tbl_kategori
+-- Dumping structure for table digidu.tbl_kategori
 CREATE TABLE IF NOT EXISTS `tbl_kategori` (
   `id_kategori` int(3) NOT NULL AUTO_INCREMENT,
   `nama_kategori` varchar(100) NOT NULL,
   `slug` varchar(30) NOT NULL,
   PRIMARY KEY (`id_kategori`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
--- Dumping data for table cibb.tbl_kategori: 4 rows
+-- Dumping data for table digidu.tbl_kategori: 5 rows
 /*!40000 ALTER TABLE `tbl_kategori` DISABLE KEYS */;
 INSERT INTO `tbl_kategori` (`id_kategori`, `nama_kategori`, `slug`) VALUES
 	(1, 'Teori', 'teori'),
@@ -326,7 +284,7 @@ INSERT INTO `tbl_kategori` (`id_kategori`, `nama_kategori`, `slug`) VALUES
 /*!40000 ALTER TABLE `tbl_kategori` ENABLE KEYS */;
 
 
--- Dumping structure for table cibb.transaksi
+-- Dumping structure for table digidu.transaksi
 CREATE TABLE IF NOT EXISTS `transaksi` (
   `tanggal` datetime DEFAULT NULL,
   `dpp` decimal(10,0) DEFAULT NULL,
@@ -334,7 +292,7 @@ CREATE TABLE IF NOT EXISTS `transaksi` (
   `npwp` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table cibb.transaksi: ~4 rows (approximately)
+-- Dumping data for table digidu.transaksi: ~4 rows (approximately)
 /*!40000 ALTER TABLE `transaksi` DISABLE KEYS */;
 INSERT INTO `transaksi` (`tanggal`, `dpp`, `pajak`, `npwp`) VALUES
 	('2014-04-30 00:00:00', 409000, 40900, '02.500.748.5-124.000'),
@@ -344,7 +302,7 @@ INSERT INTO `transaksi` (`tanggal`, `dpp`, `pajak`, `npwp`) VALUES
 /*!40000 ALTER TABLE `transaksi` ENABLE KEYS */;
 
 
--- Dumping structure for table cibb.user
+-- Dumping structure for table digidu.user
 CREATE TABLE IF NOT EXISTS `user` (
   `id_user` int(4) NOT NULL AUTO_INCREMENT,
   `nama` varchar(50) NOT NULL,
@@ -354,16 +312,25 @@ CREATE TABLE IF NOT EXISTS `user` (
   `level` int(11) NOT NULL,
   `email` varchar(100) DEFAULT NULL,
   `blokir` varchar(1) NOT NULL DEFAULT 'N',
-  `status` varchar(1) NOT NULL DEFAULT 'N',
   `aswo` varchar(50) NOT NULL,
+  `tgl_lahir` date NOT NULL,
+  `jenis_kelamin` varchar(50) NOT NULL,
+  `profesi` varchar(50) NOT NULL,
+  `alamat` text NOT NULL,
+  `kabupaten` varchar(50) NOT NULL,
+  `provinsi` varchar(50) NOT NULL,
+  `foto` text NOT NULL,
+  `tgl_registrasi` datetime NOT NULL,
+  `role_id` tinyint(4) NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
--- Dumping data for table cibb.user: ~1 rows (approximately)
+-- Dumping data for table digidu.user: ~3 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` (`id_user`, `nama`, `username`, `password`, `hp`, `level`, `email`, `blokir`, `status`, `aswo`) VALUES
-	(1, 'Administrator', 'admin', 'ee11cbb19052e40b07aac0ca060c23ee', '', 1, 'admin@prajasa.com', 'N', 'N', 'dXNlcg~~'),
-	(2, 'Alif Akbar Fitrawan', 'alif', 'ee11cbb19052e40b07aac0ca060c23ee', '085646421106', 1, 'alif@alif.com', 'N', 'N', '');
+INSERT INTO `user` (`id_user`, `nama`, `username`, `password`, `hp`, `level`, `email`, `blokir`, `aswo`, `tgl_lahir`, `jenis_kelamin`, `profesi`, `alamat`, `kabupaten`, `provinsi`, `foto`, `tgl_registrasi`, `role_id`) VALUES
+	(1, 'Administrator', 'admin', 'ee11cbb19052e40b07aac0ca060c23ee', '', 1, 'admin@prajasa.com', 'N', 'dXNlcg~~', '0000-00-00', '', '', '', '', '', '', '0000-00-00 00:00:00', 1),
+	(2, 'Alif Akbar Fitrawan', 'alifable', 'ee11cbb19052e40b07aac0ca060c23ee', '085646421106', 2, 'alif@alif.com', 'N', '', '0000-00-00', '', '', '', '', '', '', '0000-00-00 00:00:00', 2),
+	(3, 'Alif Akbar Fitrawan', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'no', 2, 'alifable@gmail.com', 'N', '', '2014-08-22', 'Laki-laki', 'pro', 'alamat', 'ko', 'pro', '201408111457433203162-166614-203162-rock3png-620x.jpg', '0000-00-00 00:00:00', 2);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
