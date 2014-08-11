@@ -30,7 +30,14 @@
 							<td><?php echo $i++ ?></td>
 							<td><?php echo $kategori->nama_kategori ?> (<?php echo $kategori->jml_kategori ?>)</td>
 							<td>
-								
+							<a href="<?php echo base_url()?>blog/blog/edit_kategori/<?php echo $kategori->id_kategori ?>" type="button" class="btn btn-default"	>
+							Edit
+							</a>
+							
+							<a href="<?php echo base_url()?>blog/blog/del_kategori/<?php echo $kategori->id_kategori ?>" type="button" class="btn btn-default"	>
+							Hapus
+							</a>
+							
 							</td>
 						</tr>
 						<?php } ?>

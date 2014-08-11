@@ -29,14 +29,16 @@
 						<?php foreach($blog as $m) { ?>
 						<tr>
 							<td><?=$m['id_post']?></td>
-							<td><a href="<?=site_url('learning/post/'.$m['id_post'])?>"><?=$m['judul']?></a></td>
+							<td><a href="<?=site_url('post/'.$m['uri'])?>"><?=$m['judul']?></a></td>
 							<td><?=$m['nama_kategori']?></td>
 							<td><?=$m['tanggal']?></td>
 							<td><?=$m['status']?></td>
 							<td>
-								<a href="<?=site_url('learning/post/'.$m['id_post'])?>" class="btn btn-sm btn-default" rel="tooltip" title="lihat"><span class="glyphicon glyphicon-search"></span></a>
+								<a href="<?=site_url('post/'.$m['uri'])?>" class="btn btn-sm btn-default" rel="tooltip" title="lihat"><span class="glyphicon glyphicon-search"></span></a>
 								<a href="<?=site_url('blog/edit/'.$m['id_post'])?>" class="btn btn-sm btn-success" rel="tooltip" title="ubah"><span class="glyphicon glyphicon-pencil"></span></a>
-								<a href="javascript:delpost('<?php echo $m['id_post']?>');" class="btn btn-sm btn-danger" rel="tooltip" title="hapus"><span class="glyphicon glyphicon-trash"></span></a>
+						
+								
+								<a href="<?php echo base_url();?>blog/blog/del/<?php echo $m['id_post']; ?>" onclick="javascript:return confirm('Apakah Anda Yakin Menghapus data ini ?')" class="btn btn-sm btn-danger" rel="tooltip" title="hapus"><span class="glyphicon glyphicon-trash"></span></a>
 							</td>
 						</tr>
 						<?php }; ?>

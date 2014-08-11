@@ -1,4 +1,4 @@
-
+<?php $this->load->view('_blocks/header'); ?>
 
 <div class="container">
 	<h1>Ubah Kategori Materi</h1>
@@ -11,7 +11,7 @@
 				if(isset($msg)){
 					echo $msg;}
 				?>
-				<form class="well" action="<?=site_url('materi/update_kategori/'.$kategori['id_kategori'])?>" method="post" accept-charset="utf-8">
+				<?php echo form_open($post_url, array('class' => 'well'));?>
 					<div class="input-prepend">
 						<input type="text" class="input-large" name="nama_kategori" value="<?=$kategori['nama_kategori']?>" required maxlength="40" autofocus />
 					</div>
@@ -23,3 +23,4 @@
 			</div>
 		</div>
 	</div>
+<?php $this->load->view('_blocks/footer'); ?>

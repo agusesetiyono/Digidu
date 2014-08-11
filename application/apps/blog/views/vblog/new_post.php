@@ -25,7 +25,7 @@
 							<div class="control-group">
 								<label class="control-label" for="">Pilih Kategori</label>
 								<div class="controls">
-									<select name="kategori"><?php foreach($kategori as $k){ ?><option value="<?=$k['id_kategori']?>" ><?=$k['nama_kategori']?></option> <?php } ?></select>
+									<select name="kategori"><?php foreach($kategori as $k){ ?><option value="<?php echo $k->id_kategori?>" ><?php echo $k->nama_kategori?></option> <?php } ?></select>
 									<p class="help-block"><i>Pilih kategori blog Pelajaran</i></p>
 								</div>
 							</div>

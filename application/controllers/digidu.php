@@ -153,6 +153,17 @@ class Digidu extends CI_Controller {
 	
 	$this->load->view('profile',$data);
 	}
+	
+	function logout()
+	{
+		if($this->auth->is_logged_in() == true)
+		{
+			// jika dia memang sudah login, destroy session
+			$this->auth->do_logout();
+		}
+		// larikan ke halaman utama
+		redirect(base_url());
+	}
 
 }
 

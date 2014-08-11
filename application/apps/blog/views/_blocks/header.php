@@ -45,7 +45,7 @@
                                             <ul class="dropdown-menu">
                                                 <li><a href="<?php echo base_url('blog/manage_user'); ?>">Manage users</a></li>   
                                                 <li><a href="<?php echo base_url('blog/manage_user/create'); ?>">Create user</a></li>
-                                               
+												 <li><a href="<?php echo base_url('forum/admin/role_view'); ?>">Rule Forum</a></li>
                                             </ul>
                                         </li> 
                                    <?php
@@ -57,7 +57,7 @@
                                 </ul>
                                 <ul class="nav navbar-nav pull-right">
                                     <li id="login-name"><a title="Last login: <?php echo "";?>"><i class="fa fa-user"></i> <?php echo $this->session->userdata('nama') ?></a></li>
-                                    <li><a href="<?php echo base_url('blog/home/logout'); ?>">Logout <i class="fa fa-sign-out"></i></a></li>
+                                    <li><a href="<?php echo base_url('digidu/logout'); ?>">Logout <i class="fa fa-sign-out"></i></a></li>
                                 </ul>
                             <?php } } ?> 
                          

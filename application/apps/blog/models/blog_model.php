@@ -95,7 +95,7 @@ order by tbl_kategori.id_kategori ASC
 		$this->db->insert('tbl_blog', $data); 
 		$id = $this->db->insert_id();
 		$this->session->set_flashdata('message','blog berhasil disimpan!');
-		redirect('/blog/post_success/'.$id);
+		redirect('blog/blog/index');
 		
 	}	
 	

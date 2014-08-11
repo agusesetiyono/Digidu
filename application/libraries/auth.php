@@ -37,6 +37,7 @@ class Auth{
 				'username'	=> $userdata->username,
 				'password'	=> $userdata->password,
 				'email'	=> $userdata->email,
+				'cibb_user_id' => $userdata->id_user,
 			
 			
 			);

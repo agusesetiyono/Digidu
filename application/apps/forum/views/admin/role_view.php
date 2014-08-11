@@ -44,7 +44,7 @@
     <?php endif; ?>
     <style>table td {padding-top:7px !important; padding-bottom: 7px !important;} </style>
     <div class="span2">
-        <table class="table table-striped table-bordered table-condensed">
+        <table class="table table-striped">
         <thead>
             <tr>
                 <th>&nbsp;</th>

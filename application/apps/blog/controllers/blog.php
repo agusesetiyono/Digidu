@@ -9,9 +9,6 @@ class blog extends CI_Controller {
 		$this->load->model(array('blog_model','learning_model'));
 		$this->CI =& get_instance();
 
-
-		
-
 	}
 	
 	public function index($limit = 0)
@@ -75,7 +72,6 @@ class blog extends CI_Controller {
 	'page_title' => "Users",
 	'sub_judul' => "Data User",
 	'blog' => $this->blog_model->get_post_by_id($id),
-	
 	'title' => 'Edit blog',
 	'kategori' => $this->blog_model->get_kategori_blog(),
 	);
@@ -89,11 +85,18 @@ class blog extends CI_Controller {
 	
 	public function newpost()
 	{ 
-	// add new blog
-		$this->load->library('form_validation');
-		$data['kategori'] = $this->blog_model->get_kategori_blog();
-		$data['title']='Tambah blog baru';
-		
+
+	
+$level = $this->session->userdata('level');		
+$id_user = $this->session->userdata('id_user');
+	
+		$data = array(
+	'menu' => $this->usermodel->get_menu_for_level($level),
+	'page_title' => "Users",
+	'sub_judul' => "Data User",
+	'title' => 'Tambah blog baru',
+	'kategori' => $this->blog_model->get_kategori_blog(),
+	);
 
 		$this->load->view('vblog/new_post',$data);
 	
@@ -214,31 +217,24 @@ class blog extends CI_Controller {
 	public function del_kategori($id)
 	{
 
-		if($this->acl->has_permission('guru'))
-		{
-			$this->blog_model->del_kategori($id);
-		}
+		$this->blog_model->del_kategori($id);
 		$this->kategori($limit = 0);
 	}
 	
 	public function edit_kategori($id)
 	{ 
-		$data['account'] = $this->account_model->get_by_id($this->session->userdata('account_id'));
+		
 		$this->load->library('form_validation');
+		$level = $this->session->userdata('level');		
+		$id_user = $this->session->userdata('id_user');
+	
+		$data['menu'] = $this->usermodel->get_menu_for_level($level);
 		$data['kategori'] = $this->blog_model->get_kategori_blog_by_id($id);
+		$data['post_url'] = 'blog/blog/update_kategori/'.$id;
 		$data['title']='Edit Kategori blog';
-		$this->load->view('includes/header',$data); 
-		$this->load->view('includes/adm_navbar');
-		if($this->acl->has_permission('guru'))
-		{
-			$this->load->view('vblog/editkategori',$data);
-			
-		}
-		else
-		{
-			$this->load->view('restricted',$data);
-		}
-		$this->load->view('includes/footer');
+		$this->load->view('vblog/editkategori',$data); 
+		
+		
 	}
 	
 	public function new_kategori()
@@ -271,8 +267,6 @@ class blog extends CI_Controller {
 	
 	public function update_kategori($id)
 	{
-		$data['account'] = $this->account_model->get_by_id($this->session->userdata('account_id'));
-		$this->load->helper('form');
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('nama_kategori', 'Nama Kategori blog', 'required');
 		if ($this->form_validation->run() == FALSE)
@@ -281,10 +275,7 @@ class blog extends CI_Controller {
 		}
 		else
 		{
-			if($this->acl->has_permission('guru'))
-			{
-				$this->blog_model->update_kategori($id);
-			}
+			$this->blog_model->update_kategori($id);
 			$this->kategori();
 		}
 	

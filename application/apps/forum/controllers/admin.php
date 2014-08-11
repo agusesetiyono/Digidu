@@ -9,6 +9,7 @@ class Admin extends CI_Controller {
         parent::__construct();
         $this->load->model('admin_model');
 		$this->load->model('user_model');
+		$this->load->model('blog/usermodel');
 		$this->user_model->check_role();
         
         if (!$this->session->userdata('cibb_user_id')) {
@@ -138,6 +139,9 @@ class Admin extends CI_Controller {
     
     public function role_view()
     {
+	$level = $this->session->userdata('level');		
+$id_user = $this->session->userdata('id_user');
+
         $tmp_success_del = $this->session->userdata('tmp_success_del');
         if ($tmp_success_del != NULL) {
             // role deleted
@@ -149,10 +153,10 @@ class Admin extends CI_Controller {
         $this->data['roles'] = $this->admin_model->role_get_all();
         $this->data['column_width'] = floor(100 / count($this->data['roles']));
         $this->data['title']   = 'Admin Role View :: '.CIBB_TITLE;
-        $this->load->view('header', $this->data);
-        $this->load->view('admin/sidebar');
+		$this->data['menu']  = $this->usermodel->get_menu_for_level($level);
+        $this->load->view('_blocks/header', $this->data);
         $this->load->view('admin/role_view');
-        $this->load->view('footer');
+        
     }
     
     public function role_edit($role_id)
