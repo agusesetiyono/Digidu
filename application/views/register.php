@@ -56,7 +56,7 @@
 		                           
 									<input type="submit" class="btn btn-alt" value="DAFTAR SEKARANG">
 		                        </div>
-		                    </form>
+		                     <?php echo form_close(); ?>
                     	</div>
                     </div>
                 </div>

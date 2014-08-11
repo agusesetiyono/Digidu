@@ -68,7 +68,7 @@ class Digidu extends CI_Controller {
 	'post_url' => 'digidu/save_kelengkapan',
 	);
 	
-	$this->load->view('register-next');
+	$this->load->view('register-next',$data);
 	}
 	
 	function save_kelengkapan(){
