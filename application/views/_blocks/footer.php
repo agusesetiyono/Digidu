@@ -49,9 +49,21 @@
         <!--  
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="<?php echo base_url(); ?>assets/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<<<<<<< HEAD
       -->   
 
         <script src="<?php echo base_url(); ?>assets/js/jquery.js" type="text/javascript"></script>  
+=======
+<<<<<<< HEAD
+        -->
+        
+        <script src="<?php echo base_url(); ?>assets/js/jquery.js" type="text/javascript"></script>     
+=======
+     
+
+        <script src="<?php echo base_url(); ?>assets/js/jquery.js" type="text/javascript"></script>  -->    
+>>>>>>> 6bd524969edc9ecc40f9af266c13ff004d02118d
+>>>>>>> origin/master
         <script src="<?php echo base_url(); ?>assets/js/vendor/bootstrap.min.js"></script>
         <script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>assets/js/gmaps.js"></script>

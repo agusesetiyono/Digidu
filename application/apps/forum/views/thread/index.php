@@ -3,10 +3,14 @@
          <div class="container">
             <div class="row">
                 <div class="action">
-                    <div class="col-sm-12">
+                    <div class="col-md-12">
                         <h1 class="title">Forum</h1>
+                    </div>
+                    <div class="col-md-6">
                         <p>Mari belajar bersama DIGIDU dengan melakukan tanya jawab disini.</p>
-                        <ul class="breadcrumb">
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="breadcrumb pull-right">
                             <?php if ($type == 'category'): ?>
                             <li>
                                 <a href="<?php echo site_url('forum/thread'); ?>">Home</a>
@@ -33,7 +37,7 @@
     </div>
 </section>
 
-<section id="forum" class="paddin-top">
+<section id="forum" class="padding-top">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -74,32 +78,31 @@
                         return "$difference $periods[$j] {$tense}";
                     }
                 ?>
-                <table class="table table-striped table-condensed">
+                <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th width="85%">All Threads</th>
-                            <th width="15%">Last Updates</th>
+                            <th width="85%">Semua Diskusi</th>
+                            <th width="15%">Update Terakhir</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach($threads as $thread): ?>
                         <tr>
-                            <td style="font-size:12px;">
-                                <a style="font-family: verdana;" href="<?php echo site_url('forum/thread/talk/'.$thread->slug); ?>"><?php echo $thread->title; ?></a>
-                                <span style="display: block">
-                                    <a href="<?php echo site_url('forum/thread/category/'.$thread->category_slug); ?>" class="cat">Category: <?php echo $thread->category_name; ?></a>
-                                </span>
+                            <td>
+                                <a class="a-dark" href="<?php echo site_url('forum/thread/talk/'.$thread->slug); ?>" style="font-size: 20px;"><?php echo $thread->title; ?></a> <br>
+                                <a class="label label-info" href="<?php echo site_url('forum/thread/category/'.$thread->category_slug); ?>"><?php echo $thread->category_name; ?></a>
+                                
                             </td>
-                            <td style="font-size:12px;color:#999;vertical-align: middle;">
+                            <td>
                                 <!-- <?php echo date("m/d/y g:i A", strtotime($thread->date_add)); ?> -->
-                                <?php echo time_ago($thread->date_add); ?>
+                                <p><?php echo time_ago($thread->date_add); ?></p>
                             </td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-                <div class="pagination" style="text-align:center;">
-                    <ul><?php echo $page; ?></ul>
+                <div class="blog-pagination" style="text-align:center;">
+                    <ul class="pagination"><?php echo $page; ?></ul>
                 </div>
             </div>
         </div>
