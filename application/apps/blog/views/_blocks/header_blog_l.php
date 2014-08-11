@@ -41,7 +41,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a class="navbar-brand" href="<?php echo base_url(); ?>">
+                <a class="navbar-brand" href="index.html">
                 <h1><img src="<?php echo base_url(); ?>assets/img/logo.png" alt="logo" style="width: 210px; "></h1>
                 </a>
 
@@ -50,14 +50,14 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown active">
-                        <a href="<?php echo base_url(); ?>">Home</a>
+                        <a href="index.html">Home</a>
                     </li>
 
                     <li class="dropdown">
-                        <?php echo anchor('blog/learning', 'Artikel'); ?>
+                        <?php echo anchor('blog', 'Artikel'); ?>
                     </li>  
 
-                    <li class="dropdown"><a href="<?php echo base_url('forum/thread'); ?>">Forum <i class="fa fa-angle-down"></i></a>
+                    <li class="dropdown"><a href="forum.html">Forum <i class="fa fa-angle-down"></i></a>
                         <ul role="menu" class="sub-menu">
                             <li><a href="#">Coming Soon</a></li>
                         </ul>
@@ -78,21 +78,9 @@
                     <li class="dropdown">
                         <a href="tentang.html">Tentang Kami</a>
                     </li>
-					<?php
-if($this->auth->is_logged_in()) { ?>
-                    <li>
-                        <a href="<?php echo base_url('digidu/profile'); ?> "><i class="fa fa-user"></i>&nbsp;&nbsp;Akun Saya </a>
-                    </li>
-<?php } ?>
                 </ul>
             </div>
 
         </div>
     </div>
 </header>
-
-	
-<!--
-<script src="<?php echo base_url(); ?>assets/css/jquery-ui.css"></script>
- <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.2.js"></script>
- <script src="<?php echo base_url(); ?>assets/js/jquery-ui.js"></script> !-->
