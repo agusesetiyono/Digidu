@@ -71,12 +71,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-9">
+            <div class="well white">
                 <?php if (isset($tmp_success)): ?>
                 <div class="alert alert-success">
                     <a class="close" data-dismiss="alert" href="#">&times;</a>
                     <h4 class="alert-heading">Reply posted!</h4>
                 </div>
                 <?php endif; ?>
+
                 <?php if (isset($tmp_success_new)): ?>
                 <div class="alert alert-success">
                     <a class="close" data-dismiss="alert" href="#">&times;</a>
@@ -87,6 +89,7 @@
                 <div class="page-header">
                     <h3><?php echo $thread->title; ?></h3>
                 </div>
+
                 <?php
                 function time_ago($date) {
 
@@ -124,6 +127,7 @@
                     return "$difference $periods[$j] {$tense}";
                 }
                 ?>
+
                 <?php foreach ($posts as $post): ?>
                 <div class="well" style="font-family: Verdana;">
                     <?php echo $post->post; ?><br/><br/>    
@@ -140,15 +144,17 @@
                             $("#replypost<?php echo $post->id; ?>").wysiwyg("setContent", "<div style='font-size:11px; background: #e3e3e3;padding:5px;'>posted by <b>@<?php echo $post->username; ?></b><p><i><?php echo preg_replace("/&#?[a-z0-9]+;/i","", strip_tags($post->post)); ?></i></p></div><br/><br/>");
                         });
                         </script>
-                    <li><form class="well" action="" method="post" style="margin: 5px 10px;width: 600px;text-align: left;">
-                            <input type="hidden" name="row[thread_id]" value="<?php echo $thread->id; ?>"/>
-                            <input type="hidden" name="row[reply_to_id]" value="<?php echo $post->id; ?>"/>
-                            <input type="hidden" name="row[author_id]" value="<?php echo $this->session->userdata('cibb_user_id'); ?>"/>
-                            <input type="hidden" name="row[date_add]" value="<?php echo date('Y-m-d H:i:s'); ?>"/>
-                            <textarea name="row[post]" id="replypost<?php echo $post->id; ?>" class="textpostreply" cols="72" style="height:180px;" class="span12">
-                            </textarea>
-                            <input type="submit" style="margin-top:15px;font-weight: bold;" name="btn-post" class="btn btn-primary" value="Reply Post"/>
-                        </form></li>
+                        <li>
+                            <form class="well" action="" method="post" style="margin: 5px 10px;width: 600px;text-align: left;">
+                                <input type="hidden" name="row[thread_id]" value="<?php echo $thread->id; ?>"/>
+                                <input type="hidden" name="row[reply_to_id]" value="<?php echo $post->id; ?>"/>
+                                <input type="hidden" name="row[author_id]" value="<?php echo $this->session->userdata('cibb_user_id'); ?>"/>
+                                <input type="hidden" name="row[date_add]" value="<?php echo date('Y-m-d H:i:s'); ?>"/>
+                                <textarea name="row[post]" id="replypost<?php echo $post->id; ?>" class="textpostreply" cols="72" style="height:180px;" class="span12">
+                                </textarea>
+                                <input type="submit" style="margin-top:15px;font-weight: bold;" name="btn-post" class="btn btn-primary" value="Reply Post"/>
+                            </form>
+                        </li>
                     </ul>
                     </li>
                     </ul>
@@ -174,19 +180,22 @@
                     <input type="hidden" name="row[reply_to_id]" value="0"/>
                     <input type="hidden" name="row[author_id]" value="<?php echo $this->session->userdata('cibb_user_id'); ?>"/>
                     <input type="hidden" name="row[date_add]" value="<?php echo date('Y-m-d H:i:s'); ?>"/>
-                    <textarea name="row[post]" class="span12" id="textpost" style="height:150px;"></textarea>
+                    <textarea name="row[post]" class="form-control" id="textpost" rows="3"></textarea>
                     <input type="submit" style="margin-top:15px;font-weight: bold;" name="btn-post" class="btn btn-primary" value="Reply Post"/>
                 </form>
             </div>
+            </div>
             <div class="col-md-3">
-                <ul class="nav nav-tabs nav-stacked">
-                    <li class="active">
-                    <a href="javascript://"><b>Categories</b></a>
-                    </li>
-                    <?php foreach($categories as $cat): ?>
-                    <li><a href="<?php echo site_url('forum/thread/category/'.$cat['slug']); ?>"><?php echo $cat['name']; ?></a></li>
-                    <?php endforeach; ?>
-                </ul>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Kategori Forum</h3>
+                    </div>
+                    <div class="list-group" role="tablist">
+                        <?php foreach($categories as $cat): ?>
+                        <a class="list-group-item" href="<?php echo site_url('forum/thread/category/'.$cat['slug']); ?>"><?php echo $cat['name']; ?></a>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

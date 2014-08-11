@@ -2326,6 +2326,9 @@ span.stButton_gradient,
 #user-profile {
   background-color: #e6e6e6;
 }
+#forum-talk {
+  background-color: #e6e6e6;
+}
 a.list-group-item {
   color: #555;
 }
@@ -2334,5 +2337,12 @@ a.list-group-item:focus {
   color: #333;
 }
 .panel-primary {
+  border: none;
+}
+.well.white {
+  background-color: #fff;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
   border: none;
 }
