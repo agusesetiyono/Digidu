@@ -18,6 +18,10 @@ class Digidu extends CI_Controller {
 	{
 		$this->load->view('register-next');
 	}
+	public function profile()
+	{
+		$this->load->view('profile');
+	}
 }
 
 /* End of file welcome.php */

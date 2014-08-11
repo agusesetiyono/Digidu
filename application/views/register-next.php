@@ -57,8 +57,7 @@
 		                        </div>
 		                     	<div class="form-group">
 		                        	<label for="">Foto Profil</label>
-		                            <input name="Provinsi" class="form-control" required="required" placeholder="Provinsi" type="text">
-		                        </div>
+		                            <input type="file" id="foto-profil"></div>
 		                        <div class="form-group" style="margin-top: 40px;">
 		                            <input name="submit" class="btn btn-alt" value="LENGKAPI PENDAFTARAN" type="submit">
 		                       		<?php echo anchor('digidu/profile','Skip','class="btn btn-common"'); ?>
