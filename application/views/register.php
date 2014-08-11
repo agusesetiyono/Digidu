@@ -21,16 +21,23 @@
             <div class="col-md-9 col-sm-7">
                 <div class="registration-form bottom well">
                     <h2>Mari bergabung dengan DIGIDU dengan mengisi form dibawah ini:</h2>
+					<?php
+					if(isset($notifikasi)) {
+					echo $notifikasi;
+					}
+					?>
+					
                     <div class="row">
                     	<div class="col-md-8">
-		                    <form id="registration" name="registration" method="post" action="sendemail.php">
+		                    <?php $attributes = array('id' => 'registration', 'name' => 'registration');?>
+							<?php echo form_open_multipart($post_url,$attributes); ?>
 		                        <div class="form-group">
 		                        	<label for="">Nama </label>
-		                            <input name="name" class="form-control" required="required" placeholder="Nama" type="text">
+		                            <input name="nama" class="form-control" required="required" placeholder="Nama" type="text">
 		                        </div>
 		                        <div class="form-group">
 		                        	<label for="">Username </label>
-		                            <input name="Username" class="form-control" required="required" placeholder="Username" type="text">
+		                            <input name="username" class="form-control" required="required" placeholder="Username" type="text">
 		                        </div>
 		                        <div class="form-group">
 		                        	<label for="">Alamat Email</label>
@@ -46,7 +53,8 @@
 		                        </div>
 		                      
 		                        <div class="form-group" style="margin-top: 40px;">
-		                            <?php echo anchor('digidu/register_next','DAFTAR SEKARANG','class="btn btn-alt"'); ?>
+		                           
+									<input type="submit" class="btn btn-alt" value="DAFTAR SEKARANG">
 		                        </div>
 		                    </form>
                     	</div>

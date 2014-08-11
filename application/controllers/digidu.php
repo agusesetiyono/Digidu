@@ -5,6 +5,7 @@ class Digidu extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('Mregistrasi');
 	}
 	public function index()
 	{
@@ -12,12 +13,76 @@ class Digidu extends CI_Controller {
 	}
 	public function register()
 	{
-		$this->load->view('register');
+	if( FALSE == ($data = $this->session->flashdata('notif'))){
+	$notifikasi = '';
 	}
-	public function register_next()
+	else
 	{
-		$this->load->view('register-next');
+	$notifikasi = $data;
 	}
+	
+	$data = array(
+	'post_url' => 'digidu/save_registrasi',
+	'notifikasi' => $notifikasi,
+	);
+	
+	$this->load->view('register',$data);
+	}
+	
+	function save_registrasi(){
+	$post = $this->input->post();
+		
+	$data=array(
+	'nama'=>$post['nama'],
+	'username'=>$post['username'],
+	'password' =>MD5($post['password']),
+	'level' =>'2',
+	'email' =>$post['email'],
+	'tgl_registrasi' => date('Y-m-d').' '.gmdate("H:i:s", time()+60*60*7),
+	);
+	
+	$x = $this->Mregistrasi->cek_user($post['username']);
+	if($x->num_rows()>1)
+	{
+	$pesan = "Maaf username telah digunakan sebelumnya, silahkan menggunakan username lain";
+	$this->session->set_flashdata('notif', $pesan);
+	redirect('digidu/register');
+	}
+	else
+	{
+	$this->Mregistrasi->insert_user($data);	
+	$x = $this->Mregistrasi->cek_user($post['username']);
+	$id = $x->row()->id_user;
+	redirect('digidu/register_next/'.$id);
+	}
+	}
+	
+	public function register_next($id)
+	{
+	$data = array(
+	'post_url' => 'digidu/save_kelengkapan',
+	);
+	
+	$this->load->view('register-next');
+	}
+	
+	function save_kelengkapan(){
+	$post = $this->input->post();
+		
+	$data=array(
+	'tgl_lahir'=>$post['tgl_lahir'],
+	'jenis_kelamin'=> ,
+	'profesi' => ,
+	'alamat' => ,
+	'kabupaten' => ,
+	'provinsi' => ,
+	'foto' => ,
+	'hp' => ,	
+	);
+	
+	}
+	
+	
 }
 
 /* End of file welcome.php */
