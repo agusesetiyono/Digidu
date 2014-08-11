@@ -43,7 +43,7 @@
 				                    <form id="registration-next" name="registration-next" method="post" action="sendemail.php">
 										<div class="form-group">
 				                        	<label for="">Tanggal Lahir </label>
-				                            <input name="Tanggal Lahir" class="form-control" required="required" placeholder="Tanggal Lahir" type="text">
+				                            <input value="<?php echo $tgl_lahir?>" name="Tanggal Lahir" class="form-control" required="required" placeholder="Tanggal Lahir" type="text">
 				                        </div>
 										<div class="form-group">
 				                        	<label for="">Jenis Kelamin </label>

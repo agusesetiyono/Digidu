@@ -23,11 +23,12 @@
                     <h2>Login ke DIGIDU:</h2>
                     <div class="row">
                     	<div class="col-md-5">
-		                    <form id="login" name="login" method="post" action="sendemail.php">
+		                   <?php $attributes = array('id' => 'registration', 'name' => 'registration');?>
+							<?php echo form_open_multipart($post_url,$attributes); ?>
 
 		                        <div class="form-group">
 		                        	<label for="">Username </label>
-		                            <input name="Username" class="form-control" required="required" placeholder="Username" type="text">
+		                            <input name="username" class="form-control" required="required" placeholder="Username" type="text">
 		                        </div>
 		                        <div class="form-group">
 		                        	<label for="">Password</label>
@@ -36,7 +37,7 @@
 		                        <div class="form-group" style="margin-top: 40px;">
 		                            <?php echo anchor('digidu','LOGIN','class="btn btn-alt"'); ?>
 		                        </div>
-		                    </form>
+		                   <?php echo form_close(); ?>
                     	</div>
                     </div>
                 </div>

@@ -40,6 +40,12 @@ a {
   -o-transition: 300ms;
   transition: 300ms;
 }
+a.a-dark {
+  color: #333;
+}
+a.a-dark:hover {
+  color: #005ca1;
+}
 ul {
   list-style: none;
 }
