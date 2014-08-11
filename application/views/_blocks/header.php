@@ -78,6 +78,11 @@
                     <li class="dropdown">
                         <a href="tentang.html">Tentang Kami</a>
                     </li>
+
+                    <li>
+                        <?php echo anchor('digidu/profile', 'Akun Saya'); ?>
+                    </li>
+
                 </ul>
             </div>
 

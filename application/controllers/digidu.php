@@ -20,6 +20,7 @@ class Digidu extends CI_Controller {
 	{
 	$notifikasi = $data;
 	}
+<<<<<<< HEAD
 	
 	$data = array(
 	'post_url' => 'digidu/save_registrasi',
@@ -83,6 +84,12 @@ class Digidu extends CI_Controller {
 	}
 	
 	
+=======
+	public function profile()
+	{
+		$this->load->view('profile');
+	}
+>>>>>>> origin/master
 }
 
 /* End of file welcome.php */

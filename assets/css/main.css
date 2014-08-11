@@ -2314,3 +2314,16 @@ span.stButton_gradient,
   line-height: 24px;
   color: #fff;
 }
+#user-profile {
+  background-color: #e6e6e6;
+}
+a.list-group-item {
+  color: #555;
+}
+a.list-group-item:hover,
+a.list-group-item:focus {
+  color: #333;
+}
+.panel-primary {
+  border: none;
+}

@@ -58,8 +58,12 @@
 		                        </div>
 		                     	<div class="form-group">
 		                        	<label for="">Foto Profil</label>
+<<<<<<< HEAD
 		                            <input name="foto" class="form-control" required="required" placeholder="Provinsi" type="text">
 		                        </div>
+=======
+		                            <input type="file" id="foto-profil"></div>
+>>>>>>> origin/master
 		                        <div class="form-group" style="margin-top: 40px;">
 		                           <input type="submit" class="btn btn-alt" value="DAFTAR SEKARANG">
 		                       		<?php echo anchor('digidu/profile','Skip','class="btn btn-common"'); ?>
