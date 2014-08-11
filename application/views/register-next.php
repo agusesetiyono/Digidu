@@ -1,4 +1,15 @@
-<?php $this->load->view('_blocks/header'); ?>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+ <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.2.js"></script>
+ <script src="<?php echo base_url(); ?>assets/js/jquery-ui.js"></script> 
+ 
+
+
+
+
+<?php 
+echo base_url().'foto';
+$this->load->view('_blocks/header'); ?>
 
 <section id="page-breadcrumb">
     <div class="vertical-center sun">
@@ -27,7 +38,7 @@
 							<?php echo form_open_multipart($post_url,$attributes); ?>
 								<div class="form-group">
 		                        	<label for="">Tanggal Lahir </label>
-		                            <input name="tgl_lahir" class="form-control" required="required" placeholder="Tanggal Lahir" type="text">
+		                            <input name="tgl_lahir" class="form-control tanggal" required="required" placeholder="Tanggal Lahir" type="text">
 		                        </div>
 								<div class="form-group">
 		                        	<label for="">Jenis Kelamin </label>
@@ -59,7 +70,7 @@
 		                     	<div class="form-group">
 		                        	<label for="">Foto Profil</label>                   
 
-		                            <input type="file" id="foto-profil"></div>
+		                            <input type="file" id="imgInp" name="foto"/>
 								</div>
 								
 		                        <div class="form-group" style="margin-top: 40px;">
@@ -71,9 +82,20 @@
                     </div>
                 </div>
             </div>
-            <?php $this->load->view('_blocks/sidebar'); ?>
+            <?php $this->load->view('_blocks/sidebar'); 
+			 ?>
         </div>
     </div>
 </section>
 
-<?php $this->load->view('_blocks/footer'); ?>
+<script>
+$(function() {
+$( ".tanggal" ).datepicker({
+changeMonth: true,
+changeYear: true,
+dateFormat: 'yy-mm-dd',
+});
+});
+</script>
+
+		

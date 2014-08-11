@@ -65,15 +65,20 @@ class Digidu extends CI_Controller {
 	public function register_next($id)
 	{
 	$data = array(
-	'post_url' => 'digidu/save_kelengkapan',
+	'post_url' => 'digidu/save_kelengkapan/'.$id,
 	);
 	
 	$this->load->view('register-next',$data);
 	}
 	
-	function save_kelengkapan(){
+	function save_kelengkapan($id){
 	$post = $this->input->post();
-		
+	$foto = $_FILES["foto"]["name"];
+	$c = $_SERVER['DOCUMENT_ROOT'].'/Digidu/foto/'; 
+	$tanggal = date('YmdHis');
+	$new_image_name = str_replace(" ", "_", $tanggal.$id.$foto);
+	move_uploaded_file($_FILES["foto"]["tmp_name"],$c.$new_image_name);
+	
 	$data=array(
 	'tgl_lahir'=>$post['tgl_lahir'],
 	'jenis_kelamin' => $post['jenis_kelamin'],
@@ -81,10 +86,12 @@ class Digidu extends CI_Controller {
 	'alamat' =>$post['alamat'] ,
 	'kabupaten' => $post['kabupaten'],
 	'provinsi' => $post['provinsi'],
-	'foto' => $post['foto'],
+	'foto' => $new_image_name,
 	'hp' => $post['hp'],	
 	);
 	
+	$this->Mregistrasi->ubah_user($data,$id);	
+	redirect('digidu/login');
 	}
 	
 	
