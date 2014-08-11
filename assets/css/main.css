@@ -425,13 +425,13 @@ ul.sub-menu {
 }
 .form-control:hover,
 .form-control:focus {
-  border-color: #4fcccd;
+  border-color: #005ca1;
   outline: none;
   box-shadow: none;
 }
 .btn-submit {
   width: 100%;
-  background-color: #4fcccd;
+  background-color: #005ca1;
   color: #fff;
   font-size: 14px;
   font-weight: 300;
@@ -2040,7 +2040,7 @@ span.stButton_gradient,
 }
 .btn-error {
   background-color: rgba(0, 0, 0, 0);
-  border: 3px solid #4FCCCD;
+  border: 3px solid #005ca1;
   color: #797979;
   font-size: 16px;
   font-weight: 700;
@@ -2053,8 +2053,8 @@ span.stButton_gradient,
 }
 .btn-error:hover,
 .btn-error:focus {
-  background-color: #4FCCCD;
-  border-color: #4FCCCD;
+  background-color: #005ca1;
+  border-color: #005ca1;
   color: #fff;
 }
 #error-page i,
@@ -2252,7 +2252,7 @@ span.stButton_gradient,
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
-  background-color: #4FCCCD;
+  background-color: #005ca1;
 }
 .tab-content {
   padding-top: 20px;
@@ -2263,7 +2263,7 @@ span.stButton_gradient,
 }
 .icon-wrapper {
   display: inline-block;
-  background-color: #4FCCCD;
+  background-color: #005ca1;
   color: #fff;
   padding: 25px;
   box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.1) inset;

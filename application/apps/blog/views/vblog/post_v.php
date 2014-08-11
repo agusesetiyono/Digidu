@@ -32,7 +32,7 @@
                                    </div>
                                 </div>
                                 <div class="post-content overflow">
-                                    <h2 class="post-title bold"><a href="<?php echo base_url().'blog/learning/post/'.$post->uri;?>"><?php echo ucwords($post->judul);?></a></h2>
+                                    <h2 class="post-title bold"><a href="<?php echo base_url().'post/'.$post->uri;?>"><?php echo ucwords($post->judul);?></a></h2>
                                     <h3 class="post-author"><a href="#">Posted by micron News</a></h3>
                                     <p><?php echo auto_typography(word_limiter($post->isi, 50)); ?></p>
                                     <a href="<?php echo base_url().'blog/learning/post/'.$post->uri;?>" class="read-more">View More</a>

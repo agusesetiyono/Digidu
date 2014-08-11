@@ -41,8 +41,8 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a class="navbar-brand" href="index.html">
-                <h1><img src="<?php base_url(); ?>assets/img/logo.png" alt="logo" style="width: 210px; "></h1>
+                <a class="navbar-brand" href="<?php echo base_url(); ?>">
+                <h1><img src="<?php echo base_url(); ?>assets/img/logo.png" alt="logo" style="width: 210px; "></h1>
                 </a>
 
             </div>
@@ -50,11 +50,11 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown active">
-                        <a href="index.html">Home</a>
+                        <a href="<?php echo base_url(); ?>">Home</a>
                     </li>
 
                     <li class="dropdown">
-                        <?php echo anchor('blog', 'Artikel'); ?>
+                        <?php echo anchor('blog/learning', 'Artikel'); ?>
                     </li>  
 
                     <li class="dropdown"><a href="forum.html">Forum <i class="fa fa-angle-down"></i></a>

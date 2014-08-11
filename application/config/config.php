@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://'.$_SERVER['HTTP_HOST'].'/CI22/';
+$config['base_url']	= 'http://'.$_SERVER['HTTP_HOST'].'/Digidu/';
 $config['modules_locations'] = array(APPPATH.'apps/' => '../apps/',);
 
 /*

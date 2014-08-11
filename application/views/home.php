@@ -5,10 +5,9 @@
 			<div class="main-slider animate-in">
 				<div class="slide-text">
 					<h1>Mari belajar bersama kami</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium non fugiat voluptatum commodi doloribus voluptas neque assumenda id libero debitis voluptate rem, inventore laborum, saepe, eum nulla ratione a. Quibusdam.</p>
 					<p><strong>DIGIDU "Digital Education"</strong> merupakan media pembelajaran yang dikonsep dengan tampilan multimedia dalam aplikasi buku digital. Materi yang ada di dalamnya merupakan materi umum yang bisa digunakan semua kalangan.</p>
-					<a href="#" class="btn btn-common">GABUNG DENGAN KAMI</a>
-					<a href="#" class="btn btn-alt">LOGIN</a>
+					<a href="<?php echo base_url('digidu/register'); ?>" class="btn btn-common">GABUNG DENGAN KAMI</a>
+					<a href="<?php echo base_url('digidu/login'); ?>" class="btn btn-alt">LOGIN</a>
 				</div>
 				<img src="<?php base_url(); ?>assets/img/school.png" class="slider-hill" alt="slider image">
 				<img src="<?php base_url(); ?>assets/img/digidu_learn_child.png" height="264" width="300" class="slider-house" alt="slider image">
