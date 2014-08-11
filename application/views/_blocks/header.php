@@ -57,7 +57,7 @@
                         <?php echo anchor('blog/learning', 'Artikel'); ?>
                     </li>  
 
-                    <li class="dropdown"><a href="forum.html">Forum <i class="fa fa-angle-down"></i></a>
+                    <li class="dropdown"><a href="<?php echo base_url('forum/thread'); ?>">Forum <i class="fa fa-angle-down"></i></a>
                         <ul role="menu" class="sub-menu">
                             <li><a href="#">Coming Soon</a></li>
                         </ul>
