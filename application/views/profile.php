@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="action">
                     <div class="col-sm-12">
-                        <h1 class="title">Profil Anda</h1>
+                        <h1 class="title">Profil Saya</h1>
                         
                     </div>
                 </div>

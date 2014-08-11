@@ -11,6 +11,10 @@ class Digidu extends CI_Controller {
 	{
 		$this->load->view('home');
 	}
+	public function login()
+	{
+		$this->load->view('login');
+	}
 	public function register()
 	{
 	if( FALSE == ($data = $this->session->flashdata('notif'))){
