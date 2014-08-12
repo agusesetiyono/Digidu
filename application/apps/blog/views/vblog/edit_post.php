@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php $this->load->view('_blocks/header_admin'); ?>
 <script src='<?php echo base_url('assets/redactor/lib/jquery-1.7.min.js')?>'></script>
 <script src='<?php echo base_url('assets/redactor/redactor/redactor.js')?>'></script>
@@ -12,6 +13,15 @@
 		);
 </script>		
 
+=======
+<?php $this->load->view('_blocks/header'); ?>
+<link href='<?php echo base_url('assets/css/summernote.css')?>' rel="stylesheet">
+<style>
+	.note-editor .note-editable{
+		background-color: #fff;
+	}
+</style>
+>>>>>>> origin/master
 <div class="container">
 	<h1>Sunting Posting</h1>
 	<hr>
@@ -31,7 +41,7 @@
 							<div class="form-group">
 								<label for="isi" class="col-sm-2 control-label">Isi</label>
 								<div class="col-sm-10">
-									<textarea id="redactor" class="form-control" name="isi" placeholder="isi" style="width: 100%; height: 200px;"><?php echo $blog['isi']?></textarea>
+									<textarea class="summernote" name="isi" placeholder="isi" style="width: 100%; height: 200px;"><?php echo $blog['isi']?></textarea>
 								</div>
 							</div>
 
@@ -77,4 +87,21 @@
 			</div>
 		</div>
 	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="<?php echo base_url(); ?>/assets/js/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="<?php echo base_url(); ?>/assets/js/bootstrap.min.js"></script>
+
+    <script src="<?php echo base_url(); ?>/assets/js/javascript.js"></script>
+
+	<script src='<?php echo base_url('assets/js/summernote.min.js')?>'></script>
+	<script>
+		$('.summernote').summernote({
+		  height: 300,         
+
+		  minHeight: 300,           
+
+		  focus: true,            
+		});
+	</script>
 	<?php $this->load->view('_blocks/footer'); ?>
