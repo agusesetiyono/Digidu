@@ -20,45 +20,57 @@
 			<div class="col-md-12">
 				<div class="well">
 					<fieldset>
-						<form class="form-horizontal" action="<?=site_url('blog/update/'.$blog['id_post'])?>" method="post" accept-charset="utf-8">
-
-							<div class="control-group">
-								<label class="control-label" for="">Pilih Kategori</label>
-								<div class="controls">
-									<select name="kategori"><?php foreach($kategori as $k){ ?><option value="<?php echo $k->id_kategori?>" <?php if($blog['id_kategori']==$k->id_kategori){ echo "selected";}?> ><?php echo$k->nama_kategori?></option> <?php } ?></select>
-									<p class="help-block"><i>Pilih kategori blog Pelajaran</i></p>
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label" for="">Judul blog</label>
-								<div class="controls">
-									<input type="text" name="judul" value="<?php echo $blog['judul']?>" class="input-xlarge" required maxlength="100">
-									<p class="help-block"><i>Masukkan judul blog Pelajaran</i></p>
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label" for="">Isi</label>
-								<div class="controls">
-									<textarea id="redactor" name="isi" placeholder="isi" style="width: 100%; height: 200px; display: none;"><?php echo $blog['isi']?></textarea>
-									<p class="help-block"><i>Masukkan isi</i></p>
+						<form class="form-horizontal" role="form" action="<?=site_url('blog/update/'.$blog['id_post'])?>" method="post" accept-charset="utf-8">
+							<div class="form-group">
+								<label for="judul" class="col-sm-2 control-label">Judul</label>
+								<div class="col-sm-10">
+									<input type="text" name="judul" value="<?php echo $blog['judul']?>" class="form-control" required maxlength="100">
 								</div>
 							</div>
 
-
-							<div class="control-group">
-								<label class="control-label" for="">Status</label>
-								<div class="controls">
-									<input type="radio" name="status" value="published" <?php if($blog['status']=="published"){ echo "checked";}?>  > Published &nbsp;&nbsp; <input type="radio" name="status" value="unpublished"  <?php if($blog['status']=="unpublished"){ echo "checked";}?>> Unpublished
-									<p class="help-block"><i></i></p>
+							<div class="form-group">
+								<label for="isi" class="col-sm-2 control-label">Isi</label>
+								<div class="col-sm-10">
+									<textarea id="redactor" class="form-control" name="isi" placeholder="isi" style="width: 100%; height: 200px;"><?php echo $blog['isi']?></textarea>
 								</div>
 							</div>
 
-							<div class="form-actions">
-								<button type="submit" class="btn btn-primary btn-primary">
-									<i class="icon-check icon-white"></i> Simpan</button>
-									<a class="btn btn" href="<?=site_url('blog/')?>"><i class="icon-remove"></i> Batal</a>
+							<div class="form-group">
+								<label for="kategori" class="col-sm-2 control-label">Kategori</label>
+								<div class="col-sm-4">
+									<select name="kategori" class="form-control"><?php foreach($kategori as $k){ ?><option value="<?php echo $k->id_kategori?>" <?php if($blog['id_kategori']==$k->id_kategori){ echo "selected";}?> ><?php echo$k->nama_kategori?></option> <?php } ?></select>
 								</div>
-							</form>
+							</div>
+
+							<div class="form-group">
+								<label for="status" class="col-sm-2 control-label">Status</label>
+								<div class="col-sm-10">
+									
+									<div class="radio">
+										<label>
+											<input type="radio" name="status" id="status1" value="published" <?php if($blog['status']=="published"){ echo "checked";}?> >
+											Publish
+										</label>
+									</div>
+									<div class="radio">
+										<label>
+											<input type="radio" name="status" id="status2" value="unpublished" <?php if($blog['status']=="unpublished"){ echo "checked";}?> >
+											Un-Publish
+										</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<button type="submit" class="btn btn-primary btn-primary">Simpan</button>
+									<a class="btn btn-default" href="<?=site_url('blog/')?>"><i class="icon-remove"></i> Batal</a>
+								</div>
+							</div>
+
+						</form>
+
+						
 						</fieldset>
 					</div>
 				</div>
