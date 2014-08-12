@@ -228,6 +228,8 @@ class Admin extends CI_Controller {
     
     public function category_view()
     {
+	$level = $this->session->userdata('level');		
+	$id_user = $this->session->userdata('id_user');
         $tmp_success_del = $this->session->userdata('tmp_success_del');
         if ($tmp_success_del != NULL) {
             // role deleted
@@ -237,10 +239,12 @@ class Admin extends CI_Controller {
         
         $this->data['categories'] = $this->admin_model->category_get_all();
         $this->data['title']   = 'Admin Category View :: '.CIBB_TITLE;
-        $this->load->view('header', $this->data);
-        $this->load->view('admin/sidebar');
+		$this->data['menu']  = $this->usermodel->get_menu_for_level($level);
+         $this->load->view('_blocks/header_admin', $this->data);
+		//$this->load->view('header', $this->data);
+        //$this->load->view('admin/sidebar');
         $this->load->view('admin/category_view');
-        $this->load->view('footer');
+       // $this->load->view('footer');
     }
     
     public function category_edit($category_id)
@@ -280,6 +284,8 @@ class Admin extends CI_Controller {
     // start thread function
     public function thread_view($start = 0)
     {
+	$level = $this->session->userdata('level');		
+	$id_user = $this->session->userdata('id_user');
         // set pagination
         $this->load->library('pagination');
         $this->page_config['base_url']    = site_url('admin/thread_view/');
@@ -309,10 +315,12 @@ class Admin extends CI_Controller {
         $this->data['page']    = $this->pagination->create_links();
         $this->data['threads'] = $this->admin_model->thread_get_all($start, $this->page_config['per_page']);
         $this->data['title']   = 'Admin Thread View :: '.CIBB_TITLE;
-        $this->load->view('header', $this->data);
-        $this->load->view('admin/sidebar');
+		$this->data['menu']  = $this->usermodel->get_menu_for_level($level);
+       $this->load->view('_blocks/header_admin', $this->data);
+	  //  $this->load->view('header', $this->data);
+      //  $this->load->view('admin/sidebar');
         $this->load->view('admin/thread_view');
-        $this->load->view('footer');
+       // $this->load->view('footer');
     }
     
     public function thread_edit($thread_id)
