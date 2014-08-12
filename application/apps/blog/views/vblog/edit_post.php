@@ -1,4 +1,4 @@
-<?php $this->load->view('_blocks/header'); ?>
+<?php $this->load->view('_blocks/header_admin'); ?>
 <script src='<?php echo base_url('assets/redactor/lib/jquery-1.7.min.js')?>'></script>
 <script src='<?php echo base_url('assets/redactor/redactor/redactor.js')?>'></script>
 <link href='<?php echo base_url('assets/redactor/css/style.css')?>' rel="stylesheet">

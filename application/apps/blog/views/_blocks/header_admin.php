@@ -53,7 +53,8 @@
                                         <li> <a href="<?php echo base_url()?><?php echo $row->menu_uri ?>"><?php echo $row->menu_nama ?></a></li> 
                                         <?php } ?> 
 
-                                        <li> <a href="<?php echo base_url()?>forum/user/cek_login/aaaaa/aaaaa">Forum</a></li>
+										<li> <a href="<?php echo base_url()?>forum/admin/thread_view">Forum Thread</a></li>
+										<li> <a href="<?php echo base_url()?>forum/admin/category_view">Forum Kategori</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav pull-right">
                                     <li id="login-name"><a title="Last login: <?php echo "";?>"><i class="fa fa-user"></i> <?php echo $this->session->userdata('nama') ?></a></li>

@@ -1,4 +1,4 @@
-<?php $this->load->view('_blocks/header'); ?>
+<?php $this->load->view('_blocks/header_admin'); ?>
 
 <div class="container">
 	<h1>Tambah Kategori Materi</h1>

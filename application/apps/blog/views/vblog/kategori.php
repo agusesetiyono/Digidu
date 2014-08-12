@@ -1,4 +1,4 @@
-<?php $this->load->view('_blocks/header'); ?>
+<?php $this->load->view('_blocks/header_admin'); ?>
 <div class="container">
 	<div class="content">
 	
