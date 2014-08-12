@@ -6,6 +6,7 @@ class Digidu extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Mregistrasi');
+		$this->load->model('Mprofile');
 	}
 	public function index()
 	{
@@ -150,10 +151,11 @@ class Digidu extends CI_Controller {
 	'foto' => $x->row()->foto,
 	'hp' => $x->row()->hp,
 	'post_url_profil' => 'digidu/save_url_profil',
-	'post_url_akun' => '',
+	'post_url_akun' => 'digidu/save_url_akun',
 	'nama' => $x->row()->nama,	
 	'username' => $x->row()->username,	
 	'email' => $x->row()->email,
+	'get_post' => $this->Mprofile->get_post_by_user($id),
 
 	);
 	
@@ -194,6 +196,34 @@ class Digidu extends CI_Controller {
 	'kabupaten' => $post['kabupaten'],
 	'provinsi' => $post['provinsi'],
 	'hp' => $post['hp'],	
+	);
+	}
+	
+	$this->Mregistrasi->ubah_user($data,$id);	
+	redirect('digidu/profile');
+	}
+	
+	function save_url_akun() {
+	$this->auth->restrict();
+	$level = $this->session->userdata('level');	
+	$id = $this->session->userdata('id_user');
+	
+	$post = $this->input->post();
+	
+	
+	if (!empty($post['password'])) {
+	$data=array(
+	'nama'=>$post['nama'],
+	'username' => $post['username'],
+	'email' => $post['email'],
+	'password' => $post['password'],
+	);
+	}
+	else {
+	$data=array(
+	'nama'=>$post['nama'],
+	'username' => $post['username'],
+	'email' => $post['email'],
 	);
 	}
 	

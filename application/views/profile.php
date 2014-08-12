@@ -32,6 +32,7 @@
 						<a href="#edit-profile" class="list-group-item" role="tab" data-toggle="tab">Sunting Pofil</a>
 						<a href="#edit-account" class="list-group-item" role="tab" data-toggle="tab">Pengaturan Akun</a>
 						<a href="#my-post" class="list-group-item" role="tab" data-toggle="tab">Posting Saya</a>
+						<a href="<?php echo base_url()?>digidu/logout" class="list-group-item">Keluar</a>
 					</div>
 				</div>
         	</div>
@@ -101,11 +102,11 @@
 									<?php echo form_open_multipart($post_url_akun,$attributes); ?>
 					                        <div class="form-group">
 					                        	<label for="">Nama </label>
-					                            <input value="<?php echo $nama ?>" name="name" class="form-control" required="required" placeholder="Nama" type="text">
+					                            <input value="<?php echo $nama ?>" name="nama" class="form-control" required="required" placeholder="Nama" type="text">
 					                        </div>
 					                        <div class="form-group">
 					                        	<label for="">Username </label>
-					                            <input value="<?php echo $username ?>" name="Username" class="form-control" required="required" placeholder="Username" type="text">
+					                            <input value="<?php echo $username ?>" name="username" class="form-control" required="required" placeholder="Username" type="text">
 					                        </div>
 					                        <div class="form-group">
 					                        	<label for="">Alamat Email</label>
@@ -137,6 +138,12 @@
 							</div>
 							<div class="panel-body">
 								<h3>Posting Saya di DIGIDU</h3>
+								<?php
+								foreach($get_post as $data){ ?>
+								<hr>
+								<?php echo $data->post ?> on <i><a href="<?php echo base_url()?>forum/thread/talk/<?php echo $data->slug?>"><?php echo $data->title ?></a></i><br>
+								
+								<?php } ?>
 							</div>
 						</div>
 					</div>
