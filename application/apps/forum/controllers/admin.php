@@ -140,7 +140,7 @@ class Admin extends CI_Controller {
     public function role_view()
     {
 	$level = $this->session->userdata('level');		
-$id_user = $this->session->userdata('id_user');
+	$id_user = $this->session->userdata('id_user');
 
         $tmp_success_del = $this->session->userdata('tmp_success_del');
         if ($tmp_success_del != NULL) {
@@ -154,7 +154,7 @@ $id_user = $this->session->userdata('id_user');
         $this->data['column_width'] = floor(100 / count($this->data['roles']));
         $this->data['title']   = 'Admin Role View :: '.CIBB_TITLE;
 		$this->data['menu']  = $this->usermodel->get_menu_for_level($level);
-        $this->load->view('_blocks/header', $this->data);
+        $this->load->view('_blocks/header_admin', $this->data);
         $this->load->view('admin/role_view');
         
     }
