@@ -1,26 +1,30 @@
 <?php $this->load->view('_blocks/header_admin'); ?>
 
 <div class="container">
-	<h1>Ubah Kategori Materi</h1>
+	<h1>Sunting Kategori Blog</h1>
 	<hr>
 	<div class="content">
 		<div class="row">
-			<div class="span9">
+			<div class="col-md-12">
 				
 				<?php echo validation_errors(); 
 				if(isset($msg)){
 					echo $msg;}
 				?>
 				<?php echo form_open($post_url, array('class' => 'well'));?>
-					<div class="input-prepend">
-						<input type="text" class="input-large" name="nama_kategori" value="<?=$kategori['nama_kategori']?>" required maxlength="40" autofocus />
+
+					<div class="row">
+						<div class="col-md-3">
+							<input type="text" class="form-control" name="nama_kategori" value="<?=$kategori['nama_kategori']?>" required maxlength="40" autofocus />
+						</div>
 					</div>
 					<br />
 					<button type="submit" class="btn btn-primary btn-primary">
-					<i class="icon-ok icon-white"></i> Simpan</button>
-					<a class="btn btn" href="<?=site_url('materi/kategori')?>"><i class="icon-remove"></i> Batal</a>
+					<i class="fa fa-check"></i> Simpan</button>
+					<a class="btn btn-default" href="<?=site_url('blog/kategori')?>">Batal</a>
 				</form>
 			</div>
 		</div>
 	</div>
+</div>
 <?php $this->load->view('_blocks/footer'); ?>

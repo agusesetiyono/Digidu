@@ -241,10 +241,10 @@ class Admin extends CI_Controller {
         $this->data['title']   = 'Admin Category View :: '.CIBB_TITLE;
 		$this->data['menu']  = $this->usermodel->get_menu_for_level($level);
          $this->load->view('_blocks/header_admin', $this->data);
-		//$this->load->view('header', $this->data);
+		$this->load->view('_blocks/header_admin', $this->data);
         //$this->load->view('admin/sidebar');
         $this->load->view('admin/category_view');
-       // $this->load->view('footer');
+       $this->load->view('_blocks/footer_admin');
     }
     
     public function category_edit($category_id)
@@ -320,7 +320,7 @@ class Admin extends CI_Controller {
 	  //  $this->load->view('header', $this->data);
       //  $this->load->view('admin/sidebar');
         $this->load->view('admin/thread_view');
-       // $this->load->view('footer');
+       $this->load->view('_blocks/footer_admin');
     }
     
     public function thread_edit($thread_id)
