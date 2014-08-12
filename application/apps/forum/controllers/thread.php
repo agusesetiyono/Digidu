@@ -172,8 +172,8 @@ class Thread extends CI_Controller {
         
         $this->data['type']    = 'category';
         $this->data['title']   = 'Category :: '.$category->name.CIBB_TITLE;
-        $this->load->view('header', $this->data);
+        $this->load->view('_blocks/header', $this->data);
         $this->load->view('thread/index');
-        $this->load->view('footer');
+        $this->load->view('_blocks/footer');
     }
 }

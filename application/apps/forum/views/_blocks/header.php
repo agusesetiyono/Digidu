@@ -93,12 +93,3 @@ if($this->auth->is_logged_in()) { ?>
         </div>
     </div>
 </header>
-
-<<<<<<< HEAD
-=======
-	
-<!--
-<script src="<?php echo base_url(); ?>assets/css/jquery-ui.css"></script>
- <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.2.js"></script>
- <script src="<?php echo base_url(); ?>assets/js/jquery-ui.js"></script> !-->
->>>>>>> origin/master
