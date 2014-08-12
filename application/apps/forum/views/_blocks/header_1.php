@@ -21,9 +21,6 @@
         <link href="<?php echo base_url(); ?>assets/css/main.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>assets/css/responsive.css" rel="stylesheet">
 
-    <script src="<?php echo base_url(); ?>resources/bootstrap/js/jquery-1.7.2.min.js"></script>
-    <script src="<?php echo base_url(); ?>resources/bootstrap/js/bootstrap.min.js"></script>
-
         <!--[if lt IE 9]>
             <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
         <![endif]-->
@@ -60,7 +57,7 @@
                         <?php echo anchor('blog/learning', 'Artikel'); ?>
                     </li>  
 
-                    <li class="dropdown"><a href="<?php echo base_url('forum/thread'); ?>">Forum <i class="fa fa-angle-down"></i></a>
+                    <li class="dropdown"><a href="forum.html">Forum <i class="fa fa-angle-down"></i></a>
                         <ul role="menu" class="sub-menu">
                             <li><a href="#">Coming Soon</a></li>
                         </ul>
@@ -81,24 +78,14 @@
                     <li class="dropdown">
                         <a href="tentang.html">Tentang Kami</a>
                     </li>
-					<?php
-if($this->auth->is_logged_in()) { ?>
+
                     <li>
                         <a href="<?php echo base_url('digidu/profile'); ?> "><i class="fa fa-user"></i>&nbsp;&nbsp;Akun Saya </a>
                     </li>
-<?php } ?>
+
                 </ul>
             </div>
 
         </div>
     </div>
 </header>
-
-<<<<<<< HEAD
-=======
-	
-<!--
-<script src="<?php echo base_url(); ?>assets/css/jquery-ui.css"></script>
- <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.2.js"></script>
- <script src="<?php echo base_url(); ?>assets/js/jquery-ui.js"></script> !-->
->>>>>>> origin/master

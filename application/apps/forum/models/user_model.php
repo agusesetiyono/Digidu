@@ -24,21 +24,20 @@ class User_model extends CI_Model {
     
     public function check_login()
     {
-        $row = $this->input->post('row');
-        $key = $this->config->item('encryption_key');
+        $row = $this->input->post();
+     
         
         $data = array('username' => $row['username']);
-
-        $query = $this->db->get_where(TBL_USERS, $data);
+        $query = $this->db->get_where("user", $data);
         
         $plain_password = '';
 
         if ( ($query->num_rows() == 1) ) {
             $user = $query->row();
-            //$plain_password = $this->encrypt->decode($user->password, $key);
-			$plain_password = ($user->password);
+            $plain_password = $user->password;
         }
         
+		
         // if user found
         if ( ($query->num_rows() == 1) && ($plain_password == MD5($row['password'])) ) {
             $row = $query->row();
@@ -57,6 +56,7 @@ class User_model extends CI_Model {
             $this->error['login'] = 'User not found';
             $this->error_count = 1;
         }
+		
     }
     
 	public function pass_check_login($username,$password)

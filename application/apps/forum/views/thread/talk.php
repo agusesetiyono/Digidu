@@ -91,7 +91,7 @@
                     return "$difference $periods[$j] {$tense}";
                 }
                 ?>
-
+				
                 <?php foreach ($posts as $post): ?>
                 <div class="well" style="font-family: Verdana;">
                     <?php echo $post->post; ?><br/><br/>    
