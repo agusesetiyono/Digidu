@@ -1,4 +1,4 @@
-<?php $this->load->view('_blocks/header'); ?>
+<?php $this->load->view('_blocks/header_admin'); ?>
 <div id="content" class="container">
     <p class="pull-right"><a class="btn btn-default" href="<?php echo base_url('blog/manage_user'); ?>">Back</a></p>
 <p><?php echo $sub_judul ?></p>

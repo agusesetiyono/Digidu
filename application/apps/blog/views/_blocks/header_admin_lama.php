@@ -32,7 +32,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <span class="h1"><a class="navbar-brand" href="<?php echo base_url(); ?>"> <?php if (isset($site_name)) echo $site_name; else echo "DIGIDU";?></a></span>
+                        <span class="h1"><a class="navbar-brand" href="<?php echo base_url(); ?>"> <?php if (isset($site_name)) echo $site_name; ?></a></span>
                     </div>
 
                     <div class="collapse navbar-collapse">
@@ -48,12 +48,13 @@
 												 <li><a href="<?php echo base_url('forum/admin/role_view'); ?>">Rule Forum</a></li>
                                             </ul>
                                         </li> 
-                                        <?php
-                                        foreach($menu->result() as $row){ ?>
-                                        <li> <a href="<?php echo base_url()?><?php echo $row->menu_uri ?>"><?php echo $row->menu_nama ?></a></li> 
-                                        <?php } ?> 
+                                   <?php
+    foreach($menu->result() as $row){ ?>
+    <li> <a href="<?php echo base_url()?><?php echo $row->menu_uri ?>"><?php echo $row->menu_nama ?></a></li> 
+    <?php } ?> 
 
-                                        <li> <a href="<?php echo base_url()?>forum/user/cek_login/aaaaa/aaaaa">Forum</a></li>
+<li> <a href="<?php echo base_url()?>forum/admin/thread_view">Forum Thread</a></li>
+<li> <a href="<?php echo base_url()?>forum/admin/category_view">Forum Kategori</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav pull-right">
                                     <li id="login-name"><a title="Last login: <?php echo "";?>"><i class="fa fa-user"></i> <?php echo $this->session->userdata('nama') ?></a></li>
@@ -65,3 +66,8 @@
                 </div>
             </div>
 
+            <!-- Begin page content -->
+            <div id="main-container" class="container">
+                <div class="page-header">
+                    <h1><?php if(isset($page_title)) echo $page_title; ?></h1>
+                </div> 
