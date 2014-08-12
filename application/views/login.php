@@ -35,7 +35,7 @@
 		                            <input name="password" class="form-control" required="required" placeholder="Password" type="password">
 		                        </div>
 		                        <div class="form-group" style="margin-top: 40px;">
-		                           <class="btn btn-primary btn-large" type="submit">LOGIN</button>
+		                           <input class="btn btn-primary btn-large" type="submit" value="LOGIN">
 		                        </div>
 		                   <?php echo form_close(); ?>
 						   <?php

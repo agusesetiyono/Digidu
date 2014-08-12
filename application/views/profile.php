@@ -98,7 +98,7 @@
 							<div class="panel-body">
 								<div class="row">
 									<div class="col-md-8">
-										 <?php $attributes = array('id' => 'registration', 'name' => 'registration');?>
+									<?php $attributes = array('id' => 'registration', 'name' => 'registration');?>
 									<?php echo form_open_multipart($post_url_akun,$attributes); ?>
 					                        <div class="form-group">
 					                        	<label for="">Nama </label>
@@ -122,7 +122,7 @@
 					                        </div>
 					                      
 					                        <div class="form-group" style="margin-top: 40px;">
-					                            <?php echo anchor('digidu','Update','class="btn btn-common"'); ?>
+					                             <input type="submit" class="btn btn-common" value="Update">
 					                        </div>
 					                    <?php echo form_close(); ?>
 									</div>
