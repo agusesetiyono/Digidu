@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+ <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.2.js"></script>
+ <script src="<?php echo base_url(); ?>assets/js/jquery-ui.js"></script> 
 <?php $this->load->view('_blocks/header'); ?>
 
 <section id="page-breadcrumb">
@@ -21,7 +25,7 @@
         	<div class="col-md-3 col-sm-3">
 				<div class="panel panel-primary">
 					<div class="panel-heading text-center">
-						<img src="<?php echo base_url(); ?>/assets/img/testimonial/lisan_kyrana.png" alt="" style="padding-top: 15px;">
+						<img src="<?php echo base_url(); ?>/foto/<?php echo $foto ?>" alt="" style="padding-top: 15px;" width="200px">
 						<p><strong>agusesetiyono</strong></p>
 					</div>
 					<div class="list-group" role="tablist">
@@ -40,10 +44,11 @@
 							</div>
 							<div class="panel-body">
 								<div class="col-md-8">
-				                    <form id="registration-next" name="registration-next" method="post" action="sendemail.php">
+				                    <?php $attributes = array('id' => 'registration-next', 'name' => 'registration-next');?>
+									<?php echo form_open_multipart($post_url_profil,$attributes); ?>
 										<div class="form-group">
 				                        	<label for="">Tanggal Lahir </label>
-				                            <input value="<?php echo $tgl_lahir?>" name="Tanggal Lahir" class="form-control" required="required" placeholder="Tanggal Lahir" type="text">
+				                            <input value="<?php echo $tgl_lahir?>" name="tgl_lahir" class="form-control tanggal" required="required" placeholder="Tanggal Lahir" type="text">
 				                        </div>
 										<div class="form-group">
 				                        	<label for="">Jenis Kelamin </label>
@@ -54,31 +59,32 @@
 				                        </div>
 				                        <div class="form-group">
 				                        	<label for="">Profesi </label>
-				                        	<input name="Profesi" class="form-control" required="required" placeholder="Profesi" type="text">
+				                        	<input value="<?php echo $profesi ?>" name="profesi" class="form-control" required="required" placeholder="Profesi" type="text">
 				                        </div>
 				                        <div class="form-group">
 				                        	<label for="">No Telepon </label>
-				                            <input name="Nomor Telepon" class="form-control" required="required" placeholder="Nomor Telepon" type="text">
+				                            <input value="<?php echo $hp ?>" name="hp" class="form-control" required="required" placeholder="Nomor Telepon" type="text">
 				                        </div>
 										<div class="form-group">
 											<label for="">Alamat Rumah </label>
-											<textarea name="Alamat" id="alamat" required="required" class="form-control" rows="8" placeholder="Alamat Lengkap"></textarea>
+											<textarea name="alamat" id="alamat" required="required" class="form-control" rows="8" placeholder="Alamat Lengkap"><?php echo $alamat ?></textarea>
 										</div> 
 				                        <div class="form-group">
 				                        	<label for="">Kabupaten / Kota </label>
-				                            <input name="Kab" class="form-control" required="required" placeholder="Kabupaten / Kota" type="text">
+				                            <input value="<?php echo $kabupaten ?>" name="kabupaten" class="form-control" required="required" placeholder="Kabupaten / Kota" type="text">
 				                        </div>
 				                        <div class="form-group">
 				                        	<label for="">Provinsi</label>
-				                            <input name="Provinsi" class="form-control" required="required" placeholder="Provinsi" type="text">
+				                            <input value="<?php echo $provinsi?>" name="provinsi" class="form-control" required="required" placeholder="Provinsi" type="text">
 				                        </div>
 				                     	<div class="form-group">
 				                        	<label for="">Foto Profil</label>
-				                            <input type="file" id="foto-profil"></div>
+				                            <input type="file" id="imgInp" name="foto"></div>
 				                        <div class="form-group" style="margin-top: 40px;">
-				                            <?php echo anchor('digidu','Update','class="btn btn-common"'); ?>
+				                           
+											 <input type="submit" class="btn btn-common" value="Update">
 				                        </div>
-				                    </form>
+				                    <?php echo form_close(); ?>
 		                    	</div>
 							</div>
 						</div>
@@ -91,18 +97,19 @@
 							<div class="panel-body">
 								<div class="row">
 									<div class="col-md-8">
-										<form id="registration" name="registration" method="post" action="sendemail.php">
+										 <?php $attributes = array('id' => 'registration', 'name' => 'registration');?>
+									<?php echo form_open_multipart($post_url_akun,$attributes); ?>
 					                        <div class="form-group">
 					                        	<label for="">Nama </label>
-					                            <input name="name" class="form-control" required="required" placeholder="Nama" type="text">
+					                            <input value="<?php echo $nama ?>" name="name" class="form-control" required="required" placeholder="Nama" type="text">
 					                        </div>
 					                        <div class="form-group">
 					                        	<label for="">Username </label>
-					                            <input name="Username" class="form-control" required="required" placeholder="Username" type="text">
+					                            <input value="<?php echo $username ?>" name="Username" class="form-control" required="required" placeholder="Username" type="text">
 					                        </div>
 					                        <div class="form-group">
 					                        	<label for="">Alamat Email</label>
-					                            <input name="email" class="form-control" required="required" placeholder="Alamat Email" type="email">
+					                            <input value="<?php echo $email ?>" name="email" class="form-control" required="required" placeholder="Alamat Email" type="email">
 					                        </div>
 					                        <div class="form-group">
 					                        	<label for="">Password</label>
@@ -116,7 +123,7 @@
 					                        <div class="form-group" style="margin-top: 40px;">
 					                            <?php echo anchor('digidu','Update','class="btn btn-common"'); ?>
 					                        </div>
-					                    </form>
+					                    <?php echo form_close(); ?>
 									</div>
 								</div>
 
@@ -142,3 +149,13 @@
 </section>
 
 <?php $this->load->view('_blocks/footer'); ?>
+
+<script>
+$(function() {
+$( ".tanggal" ).datepicker({
+changeMonth: true,
+changeYear: true,
+dateFormat: 'yy-mm-dd',
+});
+});
+</script>

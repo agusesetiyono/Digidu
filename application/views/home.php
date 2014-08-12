@@ -185,11 +185,11 @@
 				<h4 class="modal-title" id="login-modal">Login ke DIGIDU</h4>
 			</div>
 			<div class="modal-body">
-<<<<<<< HEAD
+
 				<?php echo form_open("digidu/login", array('id' => 'login')); ?>
-=======
+
 				<form id="login-modal" name="login" method="post" action="sendemail.php">
->>>>>>> origin/master
+
 					<div class="form-group">
 					<label for="">Username </label>
 					<input name="username" class="form-control" required="required" placeholder="Username" type="text">
@@ -206,5 +206,5 @@
 		</div>
 	</div>
 </div>
-
+<script src="<?php echo base_url(); ?>assets/js/jquery.js" type="text/javascript"></script>
 <?php $this->load->view('_blocks/footer'); ?>

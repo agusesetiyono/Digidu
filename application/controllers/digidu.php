@@ -35,7 +35,7 @@ class Digidu extends CI_Controller {
 				redirect('blog/blog/index');
 				}
 				elseif ($this->session->userdata('level') == 2){
-				redirect('digidu/index');
+				redirect(base_url());
 				}
 				else {
 				echo "kelompok lain";
@@ -147,11 +147,58 @@ class Digidu extends CI_Controller {
 	'alamat' =>$x->row()->alamat ,
 	'kabupaten' => $x->row()->kabupaten,
 	'provinsi' => $x->row()->provinsi,
-	'foto' => '',
-	'hp' => $x->row()->hp,	
+	'foto' => $x->row()->foto,
+	'hp' => $x->row()->hp,
+	'post_url_profil' => 'digidu/save_url_profil',
+	'post_url_akun' => '',
+	'nama' => $x->row()->nama,	
+	'username' => $x->row()->username,	
+	'email' => $x->row()->email,
+
 	);
 	
 	$this->load->view('profile',$data);
+	}
+	
+	function save_url_profil() {
+	$this->auth->restrict();
+	$level = $this->session->userdata('level');	
+	$id = $this->session->userdata('id_user');
+	
+	$post = $this->input->post();
+	$foto = $_FILES["foto"]["name"];
+	$c = $_SERVER['DOCUMENT_ROOT'].'/Digidu/foto/'; 
+	$tanggal = date('YmdHis');
+	$new_image_name = str_replace(" ", "_", $tanggal.$id.$foto);
+		
+	if(!empty($foto)) {
+	move_uploaded_file($_FILES["foto"]["tmp_name"],$c.$new_image_name);
+	$data=array(
+	'tgl_lahir'=>$post['tgl_lahir'],
+	'jenis_kelamin' => $post['jenis_kelamin'],
+	'profesi' => $post['profesi'],
+	'alamat' =>$post['alamat'] ,
+	'kabupaten' => $post['kabupaten'],
+	'provinsi' => $post['provinsi'],
+	'foto' => $new_image_name,
+	'hp' => $post['hp'],	
+	);
+	}
+	else
+	{
+	$data=array(
+	'tgl_lahir'=>$post['tgl_lahir'],
+	'jenis_kelamin' => $post['jenis_kelamin'],
+	'profesi' => $post['profesi'],
+	'alamat' =>$post['alamat'] ,
+	'kabupaten' => $post['kabupaten'],
+	'provinsi' => $post['provinsi'],
+	'hp' => $post['hp'],	
+	);
+	}
+	
+	$this->Mregistrasi->ubah_user($data,$id);	
+	redirect('digidu/profile');
 	}
 	
 	function logout()
