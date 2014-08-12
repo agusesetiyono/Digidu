@@ -56,9 +56,9 @@ CREATE TABLE IF NOT EXISTS `cibb_posts` (
   `date_add` datetime NOT NULL,
   `date_edit` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=latin1;
 
--- Dumping data for table digidu.cibb_posts: ~58 rows (approximately)
+-- Dumping data for table digidu.cibb_posts: ~61 rows (approximately)
 /*!40000 ALTER TABLE `cibb_posts` DISABLE KEYS */;
 INSERT INTO `cibb_posts` (`id`, `thread_id`, `reply_to_id`, `author_id`, `post`, `date_add`, `date_edit`) VALUES
 	(2, 2, 0, 5, 'Hello!\r\nI have SMF 2.0.2\r\nI\'ve been tweaking it a lot and now it\'s almost perfect. But one last thing which kinda bothers me (though it might not be so crucial for other, I don\'t know...).\r\nThe left part of body of each post is somewhat different in color. I mean that\'s where you see the name of the poster, etc.\r\nIn my case, it\'s all ONE solid color from wall to wall, so to speak. There\'s no any border or a distinction between the part where the text resides and where the posters\' stats are. ', '2012-08-04 05:25:16', '0000-00-00 00:00:00'),
@@ -118,7 +118,11 @@ INSERT INTO `cibb_posts` (`id`, `thread_id`, `reply_to_id`, `author_id`, `post`,
 	(89, 2, 0, 5, 'fghfghfgh', '2012-08-15 04:40:45', '0000-00-00 00:00:00'),
 	(90, 9, 61, 5, 'which can be edited manually. I want to add/remove php values from \r\nanother div having a set of php array values (from a query). Each value \r\nhave an [Add', '2012-08-15 07:30:44', '0000-00-00 00:00:00'),
 	(91, 13, 0, 5, 'yytyu', '2012-12-02 03:23:57', '0000-00-00 00:00:00'),
-	(92, 13, 87, 5, '<div style="font-size:11px; background: #e3e3e3;padding:5px;">posted by <b>@admin</b><p><i>I am trying to create a schedule for a Tae Kwon Do school, and I would like the admins to be able to CRUD their table .This is how I would like for it to look:</i></p></div><br>iuiyio', '2012-12-02 03:24:08', '0000-00-00 00:00:00');
+	(92, 13, 87, 5, '<div style="font-size:11px; background: #e3e3e3;padding:5px;">posted by <b>@admin</b><p><i>I am trying to create a schedule for a Tae Kwon Do school, and I would like the admins to be able to CRUD their table .This is how I would like for it to look:</i></p></div><br>iuiyio', '2012-12-02 03:24:08', '0000-00-00 00:00:00'),
+	(93, 13, 0, 5, 'hai', '2014-08-12 06:42:12', '0000-00-00 00:00:00'),
+	(94, 13, 93, 5, 'masak sih ?', '2014-08-12 09:27:06', '0000-00-00 00:00:00'),
+	(95, 13, 0, 5, 'apakah yang bisa ?', '2014-08-12 09:27:18', '0000-00-00 00:00:00'),
+	(96, 13, 0, 5, '&nbsp;coba post', '2014-08-12 15:08:04', '0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `cibb_posts` ENABLE KEYS */;
 
 
@@ -137,15 +141,14 @@ CREATE TABLE IF NOT EXISTS `cibb_roles` (
   `role_edit` int(1) NOT NULL DEFAULT '0',
   `role_delete` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- Dumping data for table digidu.cibb_roles: ~4 rows (approximately)
+-- Dumping data for table digidu.cibb_roles: ~3 rows (approximately)
 /*!40000 ALTER TABLE `cibb_roles` DISABLE KEYS */;
 INSERT INTO `cibb_roles` (`id`, `role`, `admin_area`, `thread_create`, `thread_edit`, `thread_delete`, `post_create`, `post_edit`, `post_delete`, `role_create`, `role_edit`, `role_delete`) VALUES
 	(1, 'administrator', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 	(2, 'member', 0, 1, 0, 0, 1, 0, 0, 0, 0, 0),
-	(3, 'editor', 0, 0, 1, 1, 0, 1, 1, 0, 0, 0),
-	(4, 'test', 1, 1, 0, 0, 0, 0, 0, 0, 0, 0);
+	(3, 'editor', 0, 0, 1, 1, 0, 1, 1, 0, 0, 0);
 /*!40000 ALTER TABLE `cibb_roles` ENABLE KEYS */;
 
 
@@ -246,7 +249,7 @@ CREATE TABLE IF NOT EXISTS `tbl_blog` (
   `status` enum('published','unpublished') NOT NULL,
   `uri` varchar(200) NOT NULL,
   PRIMARY KEY (`id_post`)
-) ENGINE=MyISAM AUTO_INCREMENT=106 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=107 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table digidu.tbl_blog: 11 rows
 /*!40000 ALTER TABLE `tbl_blog` DISABLE KEYS */;
@@ -273,14 +276,13 @@ CREATE TABLE IF NOT EXISTS `tbl_kategori` (
   PRIMARY KEY (`id_kategori`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
--- Dumping data for table digidu.tbl_kategori: 5 rows
+-- Dumping data for table digidu.tbl_kategori: 4 rows
 /*!40000 ALTER TABLE `tbl_kategori` DISABLE KEYS */;
 INSERT INTO `tbl_kategori` (`id_kategori`, `nama_kategori`, `slug`) VALUES
 	(1, 'Teori', 'teori'),
 	(2, 'eBook', 'ebook'),
 	(3, 'Simulasi', 'simulasi'),
-	(4, 'Video', 'video'),
-	(5, 'Music', 'music');
+	(4, 'Video', 'video');
 /*!40000 ALTER TABLE `tbl_kategori` ENABLE KEYS */;
 
 
@@ -312,6 +314,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `level` int(11) NOT NULL,
   `email` varchar(100) DEFAULT NULL,
   `blokir` varchar(1) NOT NULL DEFAULT 'N',
+  `status` varchar(1) NOT NULL DEFAULT 'N',
   `aswo` varchar(50) NOT NULL,
   `tgl_lahir` date NOT NULL,
   `jenis_kelamin` varchar(50) NOT NULL,
@@ -323,14 +326,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   `tgl_registrasi` datetime NOT NULL,
   `role_id` tinyint(4) NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table digidu.user: ~3 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` (`id_user`, `nama`, `username`, `password`, `hp`, `level`, `email`, `blokir`, `aswo`, `tgl_lahir`, `jenis_kelamin`, `profesi`, `alamat`, `kabupaten`, `provinsi`, `foto`, `tgl_registrasi`, `role_id`) VALUES
-	(1, 'Administrator', 'admin', 'ee11cbb19052e40b07aac0ca060c23ee', '', 1, 'admin@prajasa.com', 'N', 'dXNlcg~~', '0000-00-00', '', '', '', '', '', '', '0000-00-00 00:00:00', 1),
-	(2, 'Alif Akbar Fitrawan', 'alifable', 'ee11cbb19052e40b07aac0ca060c23ee', '085646421106', 2, 'alif@alif.com', 'N', '', '0000-00-00', '', '', '', '', '', '', '0000-00-00 00:00:00', 2),
-	(3, 'Alif Akbar Fitrawan', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'no', 2, 'alifable@gmail.com', 'N', '', '2014-08-22', 'Laki-laki', 'pro', 'alamat', 'ko', 'pro', '201408111457433203162-166614-203162-rock3png-620x.jpg', '0000-00-00 00:00:00', 2);
+INSERT INTO `user` (`id_user`, `nama`, `username`, `password`, `hp`, `level`, `email`, `blokir`, `status`, `aswo`, `tgl_lahir`, `jenis_kelamin`, `profesi`, `alamat`, `kabupaten`, `provinsi`, `foto`, `tgl_registrasi`, `role_id`) VALUES
+	(1, 'Administrator', 'admin', 'ee11cbb19052e40b07aac0ca060c23ee', '', 1, 'admin@prajasa.com', 'N', 'N', 'dXNlcg~~', '0000-00-00', '', '', '', '', '', '', '0000-00-00 00:00:00', 1),
+	(2, 'Alif Akbar Fitrawan', 'alifable', 'ee11cbb19052e40b07aac0ca060c23ee', '085646421106', 2, 'alif@alif.com', 'N', 'N', '', '0000-00-00', '', '', '', '', '', '', '0000-00-00 00:00:00', 2),
+	(5, 'Alif Akbar Fitrawan', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'nohp', 2, 'alifable@gmail.com', 'N', 'N', '', '2014-08-01', '', 'profesi', 'alamat rumah', 'kota', 'provinsi', '201408121136565Penguins.jpg', '0000-00-00 00:00:00', 2);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
