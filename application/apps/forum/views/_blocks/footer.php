@@ -56,11 +56,12 @@
         <script src="<?php echo base_url(); ?>assets/js/vendor/bootstrap.min.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
         -->
+
         
         <link rel="stylesheet" href="<?php echo base_url(); ?>resources/jquery/jwysiwyg/jquery.wysiwyg.css"/>
         <script src="<?php echo base_url(); ?>resources/jquery/jwysiwyg/jquery.wysiwyg.js" charset="utf-8"></script>
         <script src="<?php echo base_url(); ?>resources/jquery/jwysiwyg/controls/wysiwyg.link.js" charset="utf-8"></script>
-
+<!--  
         <script>
             controlValue = {
                     justifyLeft: { visible : false },
@@ -93,6 +94,17 @@
                 });
             });
         </script>
+-->        
+            <script src='<?php echo base_url('assets/js/summernote.min.js')?>'></script>
+            <script>
+              $('.summernote').summernote({
+                height: 300,         
+
+                minHeight: 300,           
+
+                focus: true,            
+              });
+            </script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

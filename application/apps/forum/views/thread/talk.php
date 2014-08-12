@@ -1,4 +1,9 @@
-
+<link href='<?php echo base_url('assets/css/summernote.css')?>' rel="stylesheet">
+<style>
+    .note-editor .note-editable{
+        background-color: #fff;
+    }
+</style>
 <section id="page-breadcrumb">
     <div class="vertical-center sun">
          <div class="container">
@@ -114,7 +119,7 @@
                                 <input type="hidden" name="row[reply_to_id]" value="<?php echo $post->id; ?>"/>
                                 <input type="hidden" name="row[author_id]" value="<?php echo $this->session->userdata('cibb_user_id'); ?>"/>
                                 <input type="hidden" name="row[date_add]" value="<?php echo date('Y-m-d H:i:s'); ?>"/>
-                                <textarea name="row[post]" id="replypost<?php echo $post->id; ?>" class="textpostreply" cols="72" style="height:180px;" class="span12">
+                                <textarea name="row[post]" id="replypost<?php echo $post->id; ?>" class="summernote" cols="72" style="height:180px;" class="span12">
                                 </textarea>
                                 <input type="submit" style="margin-top:15px;font-weight: bold;" name="btn-post" class="btn btn-primary" value="Reply Post"/>
                             </form>
@@ -144,7 +149,7 @@
                     <input type="hidden" name="row[reply_to_id]" value="0"/>
                     <input type="hidden" name="row[author_id]" value="<?php echo $this->session->userdata('cibb_user_id'); ?>"/>
                     <input type="hidden" name="row[date_add]" value="<?php echo date('Y-m-d H:i:s'); ?>"/>
-                    <textarea name="row[post]" class="form-control" id="textpost" rows="3"></textarea>
+                    <textarea name="row[post]" class="summernote" rows="3"></textarea>
                     <input type="submit" style="margin-top:15px;font-weight: bold;" name="btn-post" class="btn btn-primary" value="Reply Post"/>
                 </form>
             </div>
