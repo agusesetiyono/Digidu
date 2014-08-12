@@ -21,6 +21,9 @@
         <link href="<?php echo base_url(); ?>assets/css/main.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>assets/css/responsive.css" rel="stylesheet">
 
+    <script src="<?php echo base_url(); ?>resources/bootstrap/js/jquery-1.7.2.min.js"></script>
+    <script src="<?php echo base_url(); ?>resources/bootstrap/js/bootstrap.min.js"></script>
+
         <!--[if lt IE 9]>
             <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
         <![endif]-->
@@ -89,3 +92,4 @@
         </div>
     </div>
 </header>
+
