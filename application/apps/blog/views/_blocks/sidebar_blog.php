@@ -36,7 +36,7 @@
 							<?php 
 							$kategori = $this->db->query("
 		select tbl_kategori.id_kategori, count(tbl_blog.id_kategori) as jml_kategori, nama_kategori, slug from tbl_kategori left outer join tbl_blog
-on tbl_blog.id_kategori = tbl_kategori.id_kategori 
+on tbl_blog.id_kategori = tbl_kategori.id_kategori where tbl_blog.status='published'
 group by tbl_kategori.id_kategori 
 order by tbl_kategori.id_kategori ASC
 		");
