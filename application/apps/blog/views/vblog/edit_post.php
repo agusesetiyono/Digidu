@@ -9,60 +9,60 @@
 		{
 			$('#redactor').redactor({ imageUpload: './assets/upload.php' });
 		}
-	);
+		);
 </script>		
 
 <div class="container">
-	<h1>Sunting blog</h1>
+	<h1>Sunting Posting</h1>
 	<hr>
 	<div class="content">
 		<div class="row">
-			<div class="span9">
-			<div class="well">
-			<fieldset>
-				<form class="form-horizontal" action="<?=site_url('blog/update/'.$blog['id_post'])?>" method="post" accept-charset="utf-8">
-					
-						<div class="control-group">
-							<label class="control-label" for="">Pilih Kategori</label>
-							<div class="controls">
-								<select name="kategori"><?php foreach($kategori as $k){ ?><option value="<?php echo $k->id_kategori?>" <?php if($blog['id_kategori']==$k->id_kategori){ echo "selected";}?> ><?php echo$k->nama_kategori?></option> <?php } ?></select>
-								<p class="help-block"><i>Pilih kategori blog Pelajaran</i></p>
+			<div class="col-md-12">
+				<div class="well">
+					<fieldset>
+						<form class="form-horizontal" action="<?=site_url('blog/update/'.$blog['id_post'])?>" method="post" accept-charset="utf-8">
+
+							<div class="control-group">
+								<label class="control-label" for="">Pilih Kategori</label>
+								<div class="controls">
+									<select name="kategori"><?php foreach($kategori as $k){ ?><option value="<?php echo $k->id_kategori?>" <?php if($blog['id_kategori']==$k->id_kategori){ echo "selected";}?> ><?php echo$k->nama_kategori?></option> <?php } ?></select>
+									<p class="help-block"><i>Pilih kategori blog Pelajaran</i></p>
+								</div>
 							</div>
-						</div>
-						<div class="control-group">
-							<label class="control-label" for="">Judul blog</label>
-							<div class="controls">
-								<input type="text" name="judul" value="<?php echo $blog['judul']?>" class="input-xlarge" required maxlength="100">
-								<p class="help-block"><i>Masukkan judul blog Pelajaran</i></p>
+							<div class="control-group">
+								<label class="control-label" for="">Judul blog</label>
+								<div class="controls">
+									<input type="text" name="judul" value="<?php echo $blog['judul']?>" class="input-xlarge" required maxlength="100">
+									<p class="help-block"><i>Masukkan judul blog Pelajaran</i></p>
+								</div>
 							</div>
-						</div>
-						<div class="control-group">
-							<label class="control-label" for="">Isi</label>
-							<div class="controls">
+							<div class="control-group">
+								<label class="control-label" for="">Isi</label>
+								<div class="controls">
 									<textarea id="redactor" name="isi" placeholder="isi" style="width: 100%; height: 200px; display: none;"><?php echo $blog['isi']?></textarea>
-								<p class="help-block"><i>Masukkan isi</i></p>
+									<p class="help-block"><i>Masukkan isi</i></p>
+								</div>
 							</div>
-						</div>
 
 
-						<div class="control-group">
-							<label class="control-label" for="">Status</label>
-							<div class="controls">
-								<input type="radio" name="status" value="published" <?php if($blog['status']=="published"){ echo "checked";}?>  > Published &nbsp;&nbsp; <input type="radio" name="status" value="unpublished"  <?php if($blog['status']=="unpublished"){ echo "checked";}?>> Unpublished
-								<p class="help-block"><i></i></p>
+							<div class="control-group">
+								<label class="control-label" for="">Status</label>
+								<div class="controls">
+									<input type="radio" name="status" value="published" <?php if($blog['status']=="published"){ echo "checked";}?>  > Published &nbsp;&nbsp; <input type="radio" name="status" value="unpublished"  <?php if($blog['status']=="unpublished"){ echo "checked";}?>> Unpublished
+									<p class="help-block"><i></i></p>
+								</div>
 							</div>
-						</div>
-						
-						<div class="form-actions">
-							<button type="submit" class="btn btn-primary btn-primary">
-							<i class="icon-check icon-white"></i> Simpan</button>
-							<a class="btn btn" href="<?=site_url('blog/')?>"><i class="icon-remove"></i> Batal</a>
-						</div>
-				</form>
-			</fieldset>
-			</div>
+
+							<div class="form-actions">
+								<button type="submit" class="btn btn-primary btn-primary">
+									<i class="icon-check icon-white"></i> Simpan</button>
+									<a class="btn btn" href="<?=site_url('blog/')?>"><i class="icon-remove"></i> Batal</a>
+								</div>
+							</form>
+						</fieldset>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-
-<?php $this->load->view('_blocks/footer'); ?>
+	<?php $this->load->view('_blocks/footer'); ?>

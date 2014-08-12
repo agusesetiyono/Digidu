@@ -1,6 +1,4 @@
 
-      </div>
-    </div>
 
     <footer id="footer">
       <div class="container">
@@ -15,4 +13,4 @@
 
     <script src="<?php echo base_url(); ?>/assets/js/javascript.js"></script>
 </body>
- </html>
+</html>

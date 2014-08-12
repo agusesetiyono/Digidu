@@ -13,18 +13,18 @@ class blog extends CI_Controller {
 	
 	public function index($limit = 0)
 	{	
-	$level = $this->session->userdata('level');		
-	$id_user = $this->session->userdata('id_user');
-	
-	$data = array(
-	'menu' => $this->usermodel->get_menu_for_level($level),
-	'page_title' => "Users",
-	'sub_judul' => "Data User",
-	'blog' => $this->blog_model->get_post($limit),
-	'limit' => $limit,
-	'title' => 'blog',
-	);
-	
+		$level = $this->session->userdata('level');		
+		$id_user = $this->session->userdata('id_user');
+		
+		$data = array(
+			'menu' => $this->usermodel->get_menu_for_level($level),
+			'page_title' => "Users",
+			'sub_judul' => "Data User",
+			'blog' => $this->blog_model->get_post($limit),
+			'limit' => $limit,
+			'title' => 'blog',
+			);
+		
 		
 
 		$this->load->view('vblog/index',$data);
@@ -39,8 +39,8 @@ class blog extends CI_Controller {
 		$data['title']='blog';
 
 
-			$this->load->view('vblog/index',$data);
-	
+		$this->load->view('vblog/index',$data);
+		
 
 	}
 	
@@ -64,21 +64,21 @@ class blog extends CI_Controller {
 	public function edit($id)
 	{ 
 
-	$level = $this->session->userdata('level');		
-	$id_user = $this->session->userdata('id_user');
-	
-	$data = array(
-	'menu' => $this->usermodel->get_menu_for_level($level),
-	'page_title' => "Users",
-	'sub_judul' => "Data User",
-	'blog' => $this->blog_model->get_post_by_id($id),
-	'title' => 'Edit blog',
-	'kategori' => $this->blog_model->get_kategori_blog(),
-	);
-	
+		$level = $this->session->userdata('level');		
+		$id_user = $this->session->userdata('id_user');
 		
-	$this->load->view('vblog/edit_post',$data);
-			
+		$data = array(
+			'menu' => $this->usermodel->get_menu_for_level($level),
+			'page_title' => "Users",
+			'sub_judul' => "Data User",
+			'blog' => $this->blog_model->get_post_by_id($id),
+			'title' => 'Edit blog',
+			'kategori' => $this->blog_model->get_kategori_blog(),
+			);
+		
+		
+		$this->load->view('vblog/edit_post',$data);
+		
 		
 		
 	}
@@ -86,20 +86,20 @@ class blog extends CI_Controller {
 	public function newpost()
 	{ 
 
-	
-$level = $this->session->userdata('level');		
-$id_user = $this->session->userdata('id_user');
-	
+		
+		$level = $this->session->userdata('level');		
+		$id_user = $this->session->userdata('id_user');
+		
 		$data = array(
-	'menu' => $this->usermodel->get_menu_for_level($level),
-	'page_title' => "Users",
-	'sub_judul' => "Data User",
-	'title' => 'Tambah blog baru',
-	'kategori' => $this->blog_model->get_kategori_blog(),
-	);
+			'menu' => $this->usermodel->get_menu_for_level($level),
+			'page_title' => "Users",
+			'sub_judul' => "Data User",
+			'title' => 'Tambah blog baru',
+			'kategori' => $this->blog_model->get_kategori_blog(),
+			);
 
 		$this->load->view('vblog/new_post',$data);
-	
+		
 	}
 
 	
@@ -119,19 +119,19 @@ $id_user = $this->session->userdata('id_user');
 		}
 		else
 		{
-	
-				$this->blog_model->update_post($id);
-	
+			
+			$this->blog_model->update_post($id);
+			
 			$this->index();
 		}
-	
+		
 	}
 	
 	
 	
 	public function add()
 	{
-	
+		
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('kategori', 'Kategori', 'required');
@@ -145,15 +145,15 @@ $id_user = $this->session->userdata('id_user');
 		{
 			$this->blog_model->add_post();
 		}
-	
-	
+		
+		
 	}
 	public function post_success($id)
 	{
-	
+		
 		$data['query'] 		= $this->learning_model->get_post($id);
-	
-	
+		
+		
 		
 		
 		if($this->learning_model->get_post($id))
@@ -161,7 +161,7 @@ $id_user = $this->session->userdata('id_user');
 			foreach($this->learning_model->get_post($id) as $row)
 			{		
 				if(isset($_POST['submit'])){
-				
+					
 					$attachment = array(
 						'message' 		=> "blog baru dari learning.asiknya.org, Selamat belajar!",
 						'name' 			=> $row->judul_blog ,
@@ -173,14 +173,14 @@ $id_user = $this->session->userdata('id_user');
 							array(
 								'name' => 'Get Search',
 								'link' => 'http://www.google.com'
+								)
 							)
-						)
-					);
+						);
 					if ($this->facebook_lib->fb->getUser()) 
 					{
 						try 
 						{
-						
+							
 							$result = $this->facebook_lib->fb->api('/319988264765724/feed/', 'post', $attachment);		
 							$data['info'] = "Berhasil terkirim ke facebook group!";
 						} 
@@ -200,10 +200,10 @@ $id_user = $this->session->userdata('id_user');
 	
 	public function kategori($limit = 0)
 	{
-	$level = $this->session->userdata('level');		
-	$id_user = $this->session->userdata('id_user');
-	
-	$data['menu'] = $this->usermodel->get_menu_for_level($level);
+		$level = $this->session->userdata('level');		
+		$id_user = $this->session->userdata('id_user');
+		
+		$data['menu'] = $this->usermodel->get_menu_for_level($level);
 		$data['category'] = $this->blog_model->get_kategori_blog();
 		$data['title']='Kategori blog';
 		$data['limit']=$limit;
@@ -227,7 +227,7 @@ $id_user = $this->session->userdata('id_user');
 		$this->load->library('form_validation');
 		$level = $this->session->userdata('level');		
 		$id_user = $this->session->userdata('id_user');
-	
+		
 		$data['menu'] = $this->usermodel->get_menu_for_level($level);
 		$data['kategori'] = $this->blog_model->get_kategori_blog_by_id($id);
 		$data['post_url'] = 'blog/blog/update_kategori/'.$id;
@@ -239,30 +239,30 @@ $id_user = $this->session->userdata('id_user');
 	
 	public function new_kategori()
 	{ 
-	$level = $this->session->userdata('level');		
-	$id_user = $this->session->userdata('id_user');
-	
-	$data['menu'] = $this->usermodel->get_menu_for_level($level);
-	$data['post_url'] = 'blog/blog/save_kategori';
-	$data['title']='Tambah Kategori blog';
-	$this->load->view('vblog/newkategori',$data);
+		$level = $this->session->userdata('level');		
+		$id_user = $this->session->userdata('id_user');
+		
+		$data['menu'] = $this->usermodel->get_menu_for_level($level);
+		$data['post_url'] = 'blog/blog/save_kategori';
+		$data['title']='Tambah Kategori blog';
+		$this->load->view('vblog/newkategori',$data);
 		
 	}
 	
 	function save_kategori(){
-	$post = $this->input->post();
-	$slug=strtolower(str_replace(" ","-",$post['nama_kategori']));
-	
-	$data=array(
-	'nama_kategori'=>$post['nama_kategori'],
-	'slug'=>$slug,
-	);
-	
-	$this->blog_model->add_kategori($data);
-	
-	$pesan = "Selamat data berhasil tersimpan !";
-	$this->session->set_flashdata('notif', $pesan);
-	redirect('blog/blog/kategori');
+		$post = $this->input->post();
+		$slug=strtolower(str_replace(" ","-",$post['nama_kategori']));
+		
+		$data=array(
+			'nama_kategori'=>$post['nama_kategori'],
+			'slug'=>$slug,
+			);
+		
+		$this->blog_model->add_kategori($data);
+		
+		$pesan = "Selamat data berhasil tersimpan !";
+		$this->session->set_flashdata('notif', $pesan);
+		redirect('blog/blog/kategori');
 	}
 	
 	public function update_kategori($id)
@@ -278,7 +278,7 @@ $id_user = $this->session->userdata('id_user');
 			$this->blog_model->update_kategori($id);
 			$this->kategori();
 		}
-	
+		
 	}
 	
 	public function add_kategori()
