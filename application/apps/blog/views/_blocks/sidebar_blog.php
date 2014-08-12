@@ -46,34 +46,10 @@ order by tbl_kategori.id_kategori ASC
 							if ($kategori->num_rows() > 0) {
 				foreach ($kategori->result() as $datas) {
 					?>
-                                <li><a href="#"><?php echo $datas->nama_kategori ?><span class="pull-right">(<?php echo $datas->jml_kategori ?>)</span></a></li>
+                                <li><a href="<?php echo base_url()?>blog/learning/kategori/<?php echo $datas->slug ?>"><?php echo $datas->nama_kategori ?><span class="pull-right">(<?php echo $datas->jml_kategori ?>)</span></a></li>
                                 <?php } } ?>
                             </ul>
                         </div>
-                        <!--                         
-                        <div class="sidebar-item tag-cloud">
-                            <h3>Tag Cloud</h3>
-                            <ul class="nav nav-pills">
-                                <li><a href="#">Corporate</a></li>
-                                <li><a href="#">Joomla</a></li>
-                                <li><a href="#">Abstract</a></li>
-                                <li><a href="#">Creative</a></li>
-                                <li><a href="#">Business</a></li>
-                                <li><a href="#">Product</a></li>
-                            </ul>
-                        </div> 
-
-                        <div class="sidebar-item popular">
-                            <h3>Latest Photos</h3>
-                            <ul class="gallery">
-                                <li><a href="#"><img src="img/portfolio/popular1.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="img/portfolio/popular2.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="img/portfolio/popular3.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="img/portfolio/popular4.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="img/portfolio/popular5.jpg" alt=""></a></li>
-                                <li><a href="#"><img src="img/portfolio/popular1.jpg" alt=""></a></li>
-                            </ul>
-                        </div>
-                        -->
+                        
                     </div>
                 </div>

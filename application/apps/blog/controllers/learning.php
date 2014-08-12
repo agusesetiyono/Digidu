@@ -69,6 +69,18 @@ class Learning extends CI_Controller {
 		
 	}
 	
+	public function kategori($slug)
+	{ 	
+		$limit = 0;
+		$data['title'] = "Learning Media"; 
+		$data['posts'] = $this->learning_model->get_post_kategori($slug);
+		$data['limit'] =$limit;
+		$data['categories'] = $this->learning_model->get_categories();
+		
+		$this->load->view('vblog/post_v', $data);
+		
+	}
+	
 	public function post($uri) // get a post based on id
 	{
 		//$this->load->model('router_model');

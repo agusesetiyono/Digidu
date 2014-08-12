@@ -22,6 +22,15 @@ class learning_model  extends CI_Model
 		$query = $this->db->get('tbl_blog');	
 		return $query->result();
 	}
+	function get_post_kategori($slug)
+	{
+	$query = $this->db->query("
+	select b.*, a.slug, a.nama_kategori from tbl_kategori a inner join tbl_blog b
+	on a.id_kategori = b.id_kategori where b.status = 'published' and a.slug='$slug'
+	order by tanggal DESC
+	");
+	return $query->result();
+	}
 	
 	function get_post_home($limit)
 	{	
