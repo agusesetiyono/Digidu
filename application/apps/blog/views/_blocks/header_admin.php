@@ -55,6 +55,14 @@
 
 										<li> <a href="<?php echo base_url()?>forum/admin/thread_view">Forum Thread</a></li>
 										<li> <a href="<?php echo base_url()?>forum/admin/category_view">Forum Kategori</a></li>
+										
+										<li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="<?php echo base_url('blog/manage_user'); ?>">List page</a></li>   
+                                                <li><a href="<?php echo base_url('blog/manage_user/create'); ?>">Create page</a></li>
+                                            </ul>
+                                        </li> 
                                 </ul>
                                 <ul class="nav navbar-nav pull-right">
                                     <li id="login-name"><a title="Last login: <?php echo "";?>"><i class="fa fa-user"></i> <?php echo $this->session->userdata('nama') ?></a></li>

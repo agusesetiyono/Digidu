@@ -20,7 +20,7 @@
 					<table class="table table-striped" id="">
 						<thead>
 							<tr>
-								<th style="width:35px;"><i class="icon-tags"></i> ID</th>
+								<th style="width:35px;"><i class="icon-tags"></i> No</th>
 								<th><i class="icon-font"></i> Judul blog</th>
 								<th><i class="icon-list"></i> Kategori</th>
 								<th><i class="icon-calendar"></i> Tanggal</th>
@@ -30,10 +30,11 @@
 							</tr>
 						</thead>
 						<tbody>
-
-							<?php foreach($blog as $m) { ?>
+							<?php 
+							$i = 1;
+							foreach($blog as $m) { ?>
 							<tr>
-								<td><?=$m['id_post']?></td>
+								<td><?php echo $i++ ?></td>
 								<td><a href="<?=site_url('post/'.$m['uri'])?>"><?=$m['judul']?></a></td>
 								<td><?=$m['nama_kategori']?></td>
 								<td><?=$m['tanggal']?></td>

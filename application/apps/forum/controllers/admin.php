@@ -156,7 +156,7 @@ class Admin extends CI_Controller {
 		$this->data['menu']  = $this->usermodel->get_menu_for_level($level);
         $this->load->view('_blocks/header_admin', $this->data);
         $this->load->view('admin/role_view');
-        
+        $this->load->view('_blocks/footer_admin');
     }
     
     public function role_edit($role_id)
@@ -223,7 +223,7 @@ class Admin extends CI_Controller {
         $this->data['menu']  = $this->usermodel->get_menu_for_level($level);
         $this->data['categories'] = $this->admin_model->category_get_all();
         $this->data['sub_judul']   = 'Admin Category Create :: '.CIBB_TITLE;
-       // $this->load->view('header', $this->data);
+      
        $this->load->view('_blocks/header_admin', $this->data);
         $this->load->view('admin/kategori_baru');
         $this->load->view('_blocks/footer_admin');
