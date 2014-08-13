@@ -53,9 +53,9 @@ class Thread extends CI_Controller {
         $this->load->model('admin_model');
         $this->data['categories'] = $this->admin_model->category_get_all();
         $this->data['title']  = ' Thread Create '.CIBB_TITLE;
-        $this->load->view('header', $this->data);
+        $this->load->view('_blocks/header', $this->data);
         $this->load->view('thread/create');
-        $this->load->view('footer');
+        $this->load->view('_blocks/footer');
     }
     
     public function set_pagination()
