@@ -28,7 +28,7 @@
                             <td><?php echo $cat['name']; ?></td>
                             <td><?php echo $cat['slug']; ?></td>
                             <td style="text-align: center;">
-                                <a class="btn btn-default" title="edit" href="<?php echo site_url('admin/category_edit').'/'.$cat['id']; ?>"><i class="fa fa-edit"></i></a>
+                                <a class="btn btn-default" title="edit" href="<?php echo site_url('forum/admin/category_edit').'/'.$cat['id']; ?>"><i class="fa fa-edit"></i></a>
                                 <a class="btn btn-danger" title="delete" class="del" id="cat_id_<?php echo $cat['id']; ?>" href="<?php echo site_url('admin/category_delete').'/'.$cat['id']; ?>"><i class="fa fa-eraser"></i></a> 
                             </td>
                         </tr>
