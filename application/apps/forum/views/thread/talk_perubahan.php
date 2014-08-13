@@ -103,18 +103,11 @@
                     
                     <ul class="nav nav-pills" style="float:left;">
                     <li class="dropdown" id="menu<?php echo $post->id; ?>">
-                    <a class="dropdown-toggle" data-toggle="dropdown" id="bquote<?php echo $post->id?>" href="#menu<?php echo $post->id; ?>" style="border: 1px solid #d9d9d9;font-size: 11px;">
+                    <a class="dropdown-toggle" id="bquote<?php echo $post->id?>" style="border: 1px solid #d9d9d9;font-size: 11px;">
                     Quote / Reply
-                    <b class="caret"></b>
+                    <!--<b class="caret"></b>!-->
                     </a>
-					<script>
-                        $(document).ready(function() {
-						 $("#bquote<?php echo $post->id; ?>").click(function(){
-						  $("#replypost<?php echo $post->id; ?>").wysiwyg("setContent", "<div style='font-size:11px; background: #e3e3e3;padding:5px;'>posted by <b>@<?php echo $post->username; ?></b><p><i><?php echo preg_replace("/&#?[a-z0-9]+;/i","", strip_tags($post->post)); ?></i></p></div><br/><br/>");
-						 });
-                          
-                        });
-                        </script>
+					<!--
                     <ul class="active dropdown-menu">
                         
                         <li>
@@ -124,13 +117,12 @@
                                 <input type="hidden" name="row[author_id]" value="<?php echo $this->session->userdata('cibb_user_id'); ?>"/>
                                 <input type="hidden" name="row[date_add]" value="<?php echo date('Y-m-d H:i:s'); ?>"/>
                                 <textarea name="row[post]" id="replypost<?php echo $post->id; ?>" class="summernote" cols="72" style="height:180px;" class="span12">
-								<div style='font-size:11px; background: #e3e3e3;padding:5px;'>posted by <b>@<?php echo $post->username; ?></b><p><i><?php echo preg_replace("/&#?[a-z0-9]+;/i","", strip_tags($post->post)); ?></i></p></div><br/><br/>
                                 </textarea>
                                 <input type="submit" style="margin-top:15px;font-weight: bold;" name="btn-post" class="btn btn-primary" value="Reply Post"/>
                             </form>
                         </li>
                     </ul>
-					
+					!-->
                     </li>
                     </ul>
                     
@@ -140,7 +132,17 @@
                     <div class="clearfix" style="height: 30px;"></div>
 
                 </div>
-				
+				<script>
+                        $(document).ready(function() {
+						 alert();
+						 var id = <?php echo json_encode($post->post); ?>;
+						 $("#bquote<?php echo $post->id; ?>").click(function(){
+						 alert(id);
+						
+						 });
+                        //    $("#replypost<?php echo $post->id; ?>").wysiwyg("setContent", "<div style='font-size:11px; background: #e3e3e3;padding:5px;'>posted by <b>@<?php echo $post->username; ?></b><p><i><?php echo preg_replace("/&#?[a-z0-9]+;/i","", strip_tags($post->post)); ?></i></p></div><br/><br/>");
+                        });
+                        </script>
                 <?php endforeach; ?>
 
                 <div class="pagination" style="text-align:center;">
@@ -156,7 +158,7 @@
                     <input type="hidden" name="row[reply_to_id]" value="0"/>
                     <input type="hidden" name="row[author_id]" value="<?php echo $this->session->userdata('cibb_user_id'); ?>"/>
                     <input type="hidden" name="row[date_add]" value="<?php echo date('Y-m-d H:i:s'); ?>"/>
-                    <textarea name="row[post]" class="summernote" rows="3" id="rep"></textarea>
+                    <textarea name="row[post]" class="summernote" rows="3" id="isi"></textarea>
                     <input type="submit" style="margin-top:15px;font-weight: bold;" name="btn-post" class="btn btn-primary" value="Reply Post"/>
                 </form>
             </div>
@@ -176,3 +178,4 @@
         </div>
     </div>
 </section>
+

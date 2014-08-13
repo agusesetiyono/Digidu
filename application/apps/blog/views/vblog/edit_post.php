@@ -13,7 +13,7 @@
 		);
 </script>		
 
-=======
+
 <?php $this->load->view('_blocks/header'); ?>
 <link href='<?php echo base_url('assets/css/summernote.css')?>' rel="stylesheet">
 <style>
@@ -21,7 +21,7 @@
 		background-color: #fff;
 	}
 </style>
->>>>>>> origin/master
+
 <div class="container">
 	<h1>Sunting Posting</h1>
 	<hr>
