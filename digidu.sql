@@ -32,17 +32,13 @@ CREATE TABLE IF NOT EXISTS `cibb_categories` (
 INSERT INTO `cibb_categories` (`id`, `parent_id`, `name`, `slug`, `date_added`, `date_edit`, `publish`) VALUES
 	(11, 0, 'Web Programming', 'web-programming', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
 	(12, 11, 'PHP', 'php', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
-	(13, 0, 'Web Design', 'web-design', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
 	(14, 13, 'CSS', 'css', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
 	(15, 12, 'Beginner & Installation', 'php-beginner-installation', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
-	(16, 12, 'Session, Cookie, Security', 'php-session-cookie-security', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
-	(17, 12, 'File & Image Manipulation', 'php-file-image-manipulation', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
 	(18, 14, 'Responsive Layout', 'css-responsive-layout', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
 	(19, 14, 'Beginner', 'css-beginner', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
 	(20, 14, 'Effect, Animation, Gradient', 'css-effect-animation-gradient', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
 	(21, 11, 'Javascript', 'javascript', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
-	(22, 21, 'Jquery', 'jquery', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
-	(23, 0, 'Project Management', 'project-management', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0);
+	(22, 21, 'Jquery', 'jquery', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0);
 /*!40000 ALTER TABLE `cibb_categories` ENABLE KEYS */;
 
 
@@ -56,32 +52,15 @@ CREATE TABLE IF NOT EXISTS `cibb_posts` (
   `date_add` datetime NOT NULL,
   `date_edit` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=latin1;
 
--- Dumping data for table digidu.cibb_posts: ~61 rows (approximately)
+-- Dumping data for table digidu.cibb_posts: ~65 rows (approximately)
 /*!40000 ALTER TABLE `cibb_posts` DISABLE KEYS */;
 INSERT INTO `cibb_posts` (`id`, `thread_id`, `reply_to_id`, `author_id`, `post`, `date_add`, `date_edit`) VALUES
-	(2, 2, 0, 5, 'Hello!\r\nI have SMF 2.0.2\r\nI\'ve been tweaking it a lot and now it\'s almost perfect. But one last thing which kinda bothers me (though it might not be so crucial for other, I don\'t know...).\r\nThe left part of body of each post is somewhat different in color. I mean that\'s where you see the name of the poster, etc.\r\nIn my case, it\'s all ONE solid color from wall to wall, so to speak. There\'s no any border or a distinction between the part where the text resides and where the posters\' stats are. ', '2012-08-04 05:25:16', '0000-00-00 00:00:00'),
-	(4, 3, 0, 5, 'I have a datetime column in mysql which I need to convert to mm/dd/yy H:M (AM/PM) using PHP.', '2012-08-06 06:18:59', '0000-00-00 00:00:00'),
 	(5, 4, 0, 5, 'Is there a simple way to convert one date format into another date format in PHP?', '2012-08-06 06:19:38', '0000-00-00 00:00:00'),
-	(17, 2, 0, 5, 'ascsac', '2012-08-06 13:16:04', '0000-00-00 00:00:00'),
 	(19, 4, 0, 5, 'jtyjtyjyt', '2012-08-06 13:30:00', '0000-00-00 00:00:00'),
 	(20, 4, 0, 5, 'tyjtyj', '2012-08-06 13:30:02', '0000-00-00 00:00:00'),
-	(21, 3, 0, 5, 'fyjyytj', '2012-08-06 13:30:13', '0000-00-00 00:00:00'),
-	(22, 3, 0, 5, 'ytjtyj', '2012-08-06 13:30:16', '0000-00-00 00:00:00'),
-	(23, 2, 0, 5, '656u5556656u', '2012-08-06 13:30:25', '0000-00-00 00:00:00'),
-	(32, 2, 0, 5, 'tryrtytr', '2012-08-07 06:34:04', '0000-00-00 00:00:00'),
-	(33, 2, 0, 5, 'tryrtysytsy', '2012-08-07 06:34:07', '0000-00-00 00:00:00'),
-	(34, 2, 0, 5, 'tryrtysytsy', '2012-08-07 06:34:07', '0000-00-00 00:00:00'),
-	(35, 2, 0, 5, 'rtyryrty', '2012-08-07 06:34:38', '0000-00-00 00:00:00'),
-	(36, 2, 0, 5, 'hthrthrt', '2012-08-07 06:41:41', '0000-00-00 00:00:00'),
-	(37, 2, 0, 5, 'rthrthrt', '2012-08-07 06:41:57', '0000-00-00 00:00:00'),
-	(38, 2, 0, 5, '345345', '2012-08-07 06:41:59', '0000-00-00 00:00:00'),
-	(39, 2, 0, 5, 'q45q45q345', '2012-08-07 06:42:01', '0000-00-00 00:00:00'),
 	(40, 5, 0, 5, 'I am not good at regular expressio. How to do a php regular expression, make a judge if a string first word is (a-h), second word is @, third part are numbers(length range from 4-15)?', '2012-08-07 12:53:33', '0000-00-00 00:00:00'),
-	(41, 3, 0, 5, 'dfsdfsd', '2012-08-07 12:55:49', '0000-00-00 00:00:00'),
-	(42, 3, 0, 5, 'sdfsdf', '2012-08-07 12:56:13', '0000-00-00 00:00:00'),
-	(43, 3, 0, 5, 'ergerg', '2012-08-07 12:58:48', '0000-00-00 00:00:00'),
 	(46, 6, 0, 5, 'I\'m basically trying to convert an image into a fluid HTML table. I\'ve dissected the image to one top piece and 5 bottom pieces and placed them in the appropriate cells to reconstruct the image.', '2012-08-07 13:11:09', '0000-00-00 00:00:00'),
 	(52, 4, 0, 5, 'ghghhgj', '2012-08-13 03:23:51', '0000-00-00 00:00:00'),
 	(53, 4, 0, 0, 'fdfdg', '2012-08-13 05:30:12', '0000-00-00 00:00:00'),
@@ -93,15 +72,8 @@ INSERT INTO `cibb_posts` (`id`, `thread_id`, `reply_to_id`, `author_id`, `post`,
 	(63, 11, 0, 5, 'How can I remove \'index.php\' from urls, if I have some controllers in the controllers folder and one in subfolder? For example my frontend url looks like this : domain.com/site/contact.html I would like my backend url look like this: domain.com/system/settings/profile.html, where system is not a controller, only a subfolder in the controllers folder. When I type domain.com/index.php/system/settings/profile.html, everything works fine, it just does not look right. Here\'s what\'s in my routes.php file:', '2012-08-13 07:16:03', '0000-00-00 00:00:00'),
 	(64, 7, 0, 5, 'fghghgthrth', '2012-08-13 07:34:58', '0000-00-00 00:00:00'),
 	(66, 7, 0, 5, 'ewfwef', '2012-08-13 08:18:47', '0000-00-00 00:00:00'),
-	(67, 2, 2, 5, 'eyewyy', '2012-08-13 10:40:09', '0000-00-00 00:00:00'),
-	(68, 2, 67, 5, '123123123', '2012-08-13 10:40:40', '0000-00-00 00:00:00'),
-	(69, 2, 2, 5, '123213321', '2012-08-13 10:40:53', '0000-00-00 00:00:00'),
-	(70, 2, 2, 5, 'yjtyjtyjytjytjyjt', '2012-08-13 11:02:40', '0000-00-00 00:00:00'),
 	(71, 11, 63, 5, 'backend url look like this: domain.com/system/settings/profile.html, where system is not a controller, only a subfolder in the controllers folder. When I type domain.com/index.php/system/settings/profile.html, everything works fine, it just does not look right. Here\'s what\'s in my routes.php file:', '2012-08-13 11:15:20', '0000-00-00 00:00:00'),
 	(72, 11, 63, 5, 'posted by admin "How can I remove \'index.php\' from urls, if I have some controllers in the controllers folder and one in subfolder? For example my frontend url looks like this : domain.com/site/contact.html I would like my backend url look like this: domain.com/system/settings/profile.html, where system is not a controller, only a subfolder in the controllers folder. When I type domain.com/index.php/system/settings/profile.html, everything works fine, it just does not look right. Here\'s what\'s in my routes.php file:"\r\n                        ', '2012-08-13 13:20:35', '0000-00-00 00:00:00'),
-	(73, 2, 0, 0, '<b>efwefwefew</b><br>', '2012-08-14 05:09:21', '0000-00-00 00:00:00'),
-	(74, 2, 0, 5, '<p>sdfadfadff</p>', '2012-08-14 05:10:46', '0000-00-00 00:00:00'),
-	(75, 2, 0, 5, '<p><b>Initial contentsadf</b></p>', '2012-08-14 05:10:53', '0000-00-00 00:00:00'),
 	(76, 11, 71, 5, 'posted by <b>@admin</b><p><i>backend url look like this: domain.com/system/settings/profile.html, where system is not a controller, only a subfolder in the controllers folder. When I type domain.com/index.php/system/settings/profile.html, everything works fine, it just does not look right. Here\'s what\'s in my routes.php file:</i></p><p>eefwfwefwefwef<i><br></i></p>', '2012-08-14 05:58:30', '0000-00-00 00:00:00'),
 	(77, 11, 71, 5, '<div style="font-size:11px; padding:5px;">posted by <b>@admin</b><p><i>backend url look like this: domain.com/system/settings/profile.html, where system is not a controller, only a subfolder in the controllers folder. When I type domain.com/index.php/system/settings/profile.html, everything works fine, it just does not look right. Here\'s what\'s in my routes.php file:</i></p>rtyretyery<br></div>', '2012-08-14 05:59:46', '0000-00-00 00:00:00'),
 	(78, 11, 76, 5, '<div style="font-size:11px; background: #e3e3e3;padding:5px;">posted by <b>@admin</b><p><i>posted by <b>@admin</b></i></p><p><i><i>backend url look like this: domain.com/system/settings/profile.html, where system is not a controller, only a subfolder in the controllers folder. When I type domain.com/index.php/system/settings/profile.html, everything works fine, it just does not look right. Here\'s what\'s in my routes.php file:</i></i></p><p><i>eefwfwefwefwefrety</i></p><p><i><i>rtyretyrty<br></i></i></p><p></p></div>', '2012-08-14 06:01:35', '0000-00-00 00:00:00'),
@@ -109,20 +81,20 @@ INSERT INTO `cibb_posts` (`id`, `thread_id`, `reply_to_id`, `author_id`, `post`,
 	(80, 11, 76, 5, '<div style="font-size:11px; background: #e3e3e3;padding:5px;">posted by <b>@admin</b><p><i>posted by <b>@admin</b></i></p><p><i><i>backend url look like this: domain.com/system/settings/profile.html, where system is not a controller, only a subfolder in the controllers folder. When I type domain.com/index.php/system/settings/profile.html, everything works fine, it just does not look right. Here\'s what\'s in my routes.php file:</i></i></p><p><i>eefwfwefwefwef<i><br></i></i></p><p></p></div><br>retyretyeryertyre ret yretyer ty', '2012-08-14 06:02:46', '0000-00-00 00:00:00'),
 	(81, 11, 80, 5, '<div style="font-size:11px; background: #e3e3e3;padding:5px;">posted by <b>@admin</b><p><i>&lt;div style="font-size:11px; background: #e3e3e3;padding:5px;"&gt;posted by &lt;b&gt;@admin&lt;/b&gt;&lt;p&gt;&lt;i&gt;posted by &lt;b&gt;@admin&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;p&gt;&lt;i&gt;&lt;i&gt;backend url look like this: domain.com/system/settings/profile.html, where system is not a controller, only a subfolder in the controllers folder. When I type domain.com/index.php/system/settings/profile.html, everything works fine, it just does not look right. Here\'s what\'s in my routes.php file:&lt;/i&gt;&lt;/i&gt;&lt;/p&gt;&lt;p&gt;&lt;i&gt;eefwfwefwefwef&lt;i&gt;&lt;br&gt;&lt;/i&gt;&lt;/i&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;&lt;br&gt;retyretyeryertyre ret yretyer ty</i></p></div>', '2012-08-14 06:03:48', '0000-00-00 00:00:00'),
 	(82, 11, 63, 5, '<div style="font-size:11px; background: #e3e3e3;padding:5px;">posted by <b>@admin</b><p><i>How can I remove \'index.php\' from urls, if I have some controllers in the controllers folder and one in subfolder? For example my frontend url looks like this : domain.com/site/contact.html I would like my backend url look like this: domain.com/system/settings/profile.html, where system is not a controller, only a subfolder in the controllers folder. When I type domain.com/index.php/system/settings/profile.html, everything works fine, it just does not look right. Here\'s what\'s in my routes.php file:</i></p></div>rtyrety', '2012-08-14 06:06:20', '0000-00-00 00:00:00'),
-	(83, 2, 23, 5, '<div style="font-size:11px; background: #e3e3e3;padding:5px;">posted by <b>@admin</b><p><i>656u5556656u</i></p></div><br>sfsss', '2012-08-14 06:09:56', '0000-00-00 00:00:00'),
-	(84, 2, 83, 5, '<div style="font-size:11px; background: #e3e3e3;padding:5px;"><i>posted by @admin656u5556656usfsss</i></div><br>sfsfss', '2012-08-14 06:10:20', '0000-00-00 00:00:00'),
 	(85, 12, 0, 5, '<p><b itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://github.com/akzhan/jwysiwyg" class="js-rewrite-sha" itemprop="url"><span itemprop="title">jwysiwyg</span></a></b> / <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://github.com/akzhan/jwysiwyg/tree/master/help" class="js-rewrite-sha" itemscope="url"><span itemprop="title">help</span></a></span> / <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://github.com/akzhan/jwysiwyg/tree/master/help/examples" class="js-rewrite-sha" itemscope="url"><span itemprop="title">examples</span></a></span> / <strong class="final-path">10-custom-controls.html</strong></p>', '2012-08-14 06:15:57', '0000-00-00 00:00:00'),
 	(86, 12, 85, 5, '<div style="font-size:11px; background: #e3e3e3;padding:5px;">posted by <b>@admin</b><p><i>jwysiwyg / help / examples / 10-custom-controls.html</i></p></div><br>how', '2012-08-14 06:15:58', '0000-00-00 00:00:00'),
 	(87, 13, 0, 5, '<p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; background-color: rgb(255, 255, 255); clear: both; word-wrap: break-word; color: rgb(0, 0, 0); font-family: Arial, \'Liberation Sans\', \'DejaVu Sans\', sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 18px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-position: initial initial; background-repeat: initial initial; ">I am trying to create a schedule for a Tae Kwon Do school, and I would like the admins to be able to CRUD their table .</p><p style="margin: 0px 0px 1em; padding: 0px; border: 0px; font-size: 14px; vertical-align: baseline; background-color: rgb(255, 255, 255); clear: both; word-wrap: break-word; color: rgb(0, 0, 0); font-family: Arial, \'Liberation Sans\', \'DejaVu Sans\', sans-serif; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 18px; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-size-adjust: auto; -webkit-text-stroke-width: 0px; background-position: initial initial; background-repeat: initial initial; ">This is how I would like for it to look:</p>', '2012-08-14 06:43:59', '0000-00-00 00:00:00'),
 	(88, 13, 87, 5, '<div style="font-size:11px; background: #e3e3e3;padding:5px;">posted by <b>@admin</b><p><i>I am trying to create a schedule for a Tae Kwon Do school, and I would like the admins to be able to CRUD their table .This is how I would like for it to look:</i></p></div><br>fyuytuityutyutyu', '2012-08-14 13:22:47', '0000-00-00 00:00:00'),
-	(89, 2, 0, 5, 'fghfghfgh', '2012-08-15 04:40:45', '0000-00-00 00:00:00'),
 	(90, 9, 61, 5, 'which can be edited manually. I want to add/remove php values from \r\nanother div having a set of php array values (from a query). Each value \r\nhave an [Add', '2012-08-15 07:30:44', '0000-00-00 00:00:00'),
 	(91, 13, 0, 5, 'yytyu', '2012-12-02 03:23:57', '0000-00-00 00:00:00'),
 	(92, 13, 87, 5, '<div style="font-size:11px; background: #e3e3e3;padding:5px;">posted by <b>@admin</b><p><i>I am trying to create a schedule for a Tae Kwon Do school, and I would like the admins to be able to CRUD their table .This is how I would like for it to look:</i></p></div><br>iuiyio', '2012-12-02 03:24:08', '0000-00-00 00:00:00'),
 	(93, 13, 0, 5, 'hai', '2014-08-12 06:42:12', '0000-00-00 00:00:00'),
 	(94, 13, 93, 5, 'masak sih ?', '2014-08-12 09:27:06', '0000-00-00 00:00:00'),
 	(95, 13, 0, 5, 'apakah yang bisa ?', '2014-08-12 09:27:18', '0000-00-00 00:00:00'),
-	(96, 13, 0, 5, '&nbsp;coba post', '2014-08-12 15:08:04', '0000-00-00 00:00:00');
+	(96, 13, 0, 5, '&nbsp;coba post', '2014-08-12 15:08:04', '0000-00-00 00:00:00'),
+	(97, 11, 82, 1, 'coba bisa gak ?                                ', '2014-08-13 06:05:14', '0000-00-00 00:00:00'),
+	(98, 13, 92, 1, '								<div style="font-size:11px; background: #e3e3e3;padding:5px;">posted by <b>@user</b><p><i>posted by @adminI am trying to create a schedule for a Tae Kwon Do school, and I would like the admins to be able to CRUD their table .This is how I would like for it to look:iuiyio</i></p></div><br>cobak ah<br>\r\n                                ', '2014-08-13 06:59:07', '0000-00-00 00:00:00'),
+	(99, 13, 93, 1, '								<div style="font-size:11px; background: #e3e3e3;padding:5px;">posted by <b>@user</b><p><i>hai</i></p></div>apak ?<br><br><br>\r\n                                ', '2014-08-13 22:36:37', '0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `cibb_posts` ENABLE KEYS */;
 
 
@@ -164,13 +136,10 @@ CREATE TABLE IF NOT EXISTS `cibb_threads` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
--- Dumping data for table digidu.cibb_threads: ~11 rows (approximately)
+-- Dumping data for table digidu.cibb_threads: ~10 rows (approximately)
 /*!40000 ALTER TABLE `cibb_threads` DISABLE KEYS */;
 INSERT INTO `cibb_threads` (`id`, `category_id`, `title`, `slug`, `date_add`, `date_edit`, `date_last_post`) VALUES
-	(2, 19, 'Need help for forum styling using phpBB', 'need-help-for-forum-styling-using-phpbb', '2012-08-04 05:25:16', '0000-00-00 00:00:00', '2012-08-04 05:25:16'),
-	(3, 12, 'Format mysql datetime with php', 'format-mysql-datetime-with-php', '2012-08-06 06:18:59', '0000-00-00 00:00:00', '2012-08-06 06:18:59'),
 	(4, 12, 'Convert one date format into another in PHP', 'convert-one-date-format-into-another-in-php', '2012-08-06 06:19:38', '0000-00-00 00:00:00', '2012-08-06 06:19:38'),
-	(5, 12, 'Is my php regular expression right?', 'is-my-php-regular-expression-right?', '2012-08-07 12:53:33', '0000-00-00 00:00:00', '2012-08-07 12:53:33'),
 	(6, 18, 'Fluid images in table - Width: CSS vs HTML', 'fluid-images-in-table---width:-css-vs-html', '2012-08-07 13:11:09', '0000-00-00 00:00:00', '2012-08-07 13:11:09'),
 	(7, 12, 'How to add RDoc documentation for a method defined using class_eval?', 'how-to-add-rdoc-documentation-for-a-method-defined-using-classeval', '2012-08-13 06:33:48', '0000-00-00 00:00:00', '2012-08-13 06:33:48'),
 	(9, 11, 'transfer (add/remove) php array values between 2 divs', 'transfer-addremove-php-array-values-between-2-divs', '2012-08-13 06:38:03', '0000-00-00 00:00:00', '2012-08-13 06:38:03'),
@@ -239,6 +208,24 @@ INSERT INTO `menu` (`menu_id`, `menu_nama`, `menu_uri`, `menu_allowed`) VALUES
 /*!40000 ALTER TABLE `menu` ENABLE KEYS */;
 
 
+-- Dumping structure for table digidu.statis_page
+CREATE TABLE IF NOT EXISTS `statis_page` (
+  `id_page` int(11) NOT NULL AUTO_INCREMENT,
+  `menu_title` varchar(50) NOT NULL DEFAULT '0',
+  `judul` varchar(150) DEFAULT NULL,
+  `slug` text,
+  `isi` text,
+  `status` enum('published','unpublished') NOT NULL,
+  PRIMARY KEY (`id_page`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+-- Dumping data for table digidu.statis_page: ~0 rows (approximately)
+/*!40000 ALTER TABLE `statis_page` DISABLE KEYS */;
+INSERT INTO `statis_page` (`id_page`, `menu_title`, `judul`, `slug`, `isi`, `status`) VALUES
+	(1, 'Kami', 'Kami adalah giant', 'kami', '<p>ini adalah isi nya yah yah yah<br></p><p><br></p>', 'published');
+/*!40000 ALTER TABLE `statis_page` ENABLE KEYS */;
+
+
 -- Dumping structure for table digidu.tbl_blog
 CREATE TABLE IF NOT EXISTS `tbl_blog` (
   `id_post` int(3) NOT NULL AUTO_INCREMENT,
@@ -261,7 +248,6 @@ INSERT INTO `tbl_blog` (`id_post`, `id_kategori`, `judul`, `isi`, `tanggal`, `st
 	(83, 2, 'Fisika Listrik Dinamis', '<p>Ini adalah eBook yang membahas tentang Listrik Dinamis untuk Kelas X SMA.</p>\n\n<ul>\n	<li>\n<embed src="https://www.box.com/embed/9pzf0d5zbgqnagl.swf" width="680" height="400" wmode="opaque" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always"><br>\n</li>\n</ul>', '2012-11-27 22:39:55', 'published', ''),
 	(84, 3, 'Listrik Dinamis: Simulasi', '\n<p>Ini adalah mediabelajar berupa flash/swf. didalamnya terdapat uraian singkat mengenai bahasan Listrik Dinamis disertai dengan Simulasi. Klik gambar untuk melihat / mendownload.</p>\n\n<p><a href="http://www.fileden.com/files/2012/11/27/3370774/template_byme.swf"><img src="http://i1306.photobucket.com/albums/s580/agusesetiyono/Screenshot_2.jpg" style="cursor: nw-resize; width: 562.0714285714286px; height: 427px; float: none; margin: 0px;" alt="Simulasi"></a><br>\n</p>\n', '2012-11-27 23:45:05', 'published', ''),
 	(92, 1, 'Santa Cruz Tempat yang Membuat Newton Gerah', '\n<p><span style="line-height: 1.5em;">Santa Cruz adalah suatu tempat di california,disini Newton ilmuan besar kita di patahkan &nbsp;semua ide dan buah pikiran nya mengenai hukum gravitasi nya.Di daerah ini gravitasi seolah-olah tidak menuju kearah pusat bumi seperti yang di tuangkan oleh kakek kita Newton dalam semua pemikiran nya.pada daerah ini pepohonan dan rumah tidakl tegak berdiri melainkan miring dan hampir jatuh,padahal pohon tersebut sangat kuat.</span><br>\n</p>\n\n<p>kemiringan benda-benda di daerah ini sangat tidak lazim,yah seperti dikatakan kan tadi hukum newton tidak berlaku disini.</p>\n\n<p>Sebenarnya,fenomena-fenomena seperti ini tidak hanya terjadi diwilayah Santa Cruz,California saja,tetapi ditempat lain juga bisa ditemukan. Memang kebanyakan berada di USA,tapi di wilayah Eropa juga dapat ditemui tempat seperti ini,contohnya disekitar Warsawa,Polandia. Oh iya,aq baru ingat, hal serupa juga ada disebuah wilayah di China,namun yang ini berupa tanjakan jalan raya. Uniknya ditempat itu seluruh benda beroda/yang mudah menggelinding akan tertarik menuju keatas tanjakan,padahal jika dipikir secara logika hal tsb sangatlah tidak masuk akal.<span rel="pastemarkerend" id="pastemarkerend58673"></span></p>\n', '2013-01-03 08:13:49', 'published', ''),
-	(96, 4, 'Arus Listrik', '<p>Coba kamu perhatikan gambar berikut, Ada baterai, lampu dan penghantar (kabel).</p>\r\n\r\n<p><img src="http://img835.imageshack.us/img835/8421/listrik.jpg" style="cursor: default;"></p>\r\n\r\n<p>Pada saat saklar S terbuka ternyata pada rangkaian tidak terjadi apa-apa. Tetapi pada saat saklar S tertutup ternyata lampu dapat menyala. Nyala lampu inilah bukti bahwa pada rangkaian itu ada arus listrik.</p>\r\n\r\n<p><b>Arus listrik </b>adalah<b> aliran muatan-muatan listrik pada suatu rangkaian tertutup</b>. Dari konversi yang ada arus listrik digunakan<b> arah seperti aliran muatan positif</b> (kebalikan aliran elektron). Dalam bahasa yang lain arus listrik dapat timbul karena <b>ada beda potensial</b> pada dua titik dan arahnya dari potensial tinggi ke potensial yang lebih rendah. Besarnya arus listrik dinamakan <b>kuat arus listrik</b> dan didefnisikan sebagai <b>banyaknya muatan positif yang melalui suatu titik tiap satu satuan waktu</b>. Dari defnisi ini, kuat arus listrik dapat di rumuskan sebagai berikut.</p>\r\n<h1><b><span style="color: #e36c09;">I = Q / t</span></b></h1>\r\n\r\n<p>dengan <i>I = Kuat Arus, Q = Muatan Listrik , t = waktu</i></p>\r\n\r\n<p>Satuan kuat arus listrik adalah selang waktu ampere di singkat A, untuk mengenang jasa ilmuwan Fisika bernama Andre M. Ampere (1775-1836). Dan kuat arus listrik ini dapat diukur dengan alat yang dinamakan <b><i>amperemeter.</i></b></p>', '2013-02-09 09:08:59', 'unpublished', ''),
 	(103, 2, 'judul yang sangat panjang', 'fadsfhghjghgkjlbvcxsdfghjklkhgkdfs', '2014-08-09 06:23:33', 'published', 'judul-yang-sangat-panjang'),
 	(104, 1, 'supaya saya tahu adad', 'dsfhsgkhjkl;l', '2014-08-09 10:47:30', 'unpublished', 'supaya-saya-tahu-adad-1'),
 	(105, 4, 'coba membuat sebuah judul', 'hggkjhjk;l\';\r\nlkhjgh', '2014-08-09 13:09:29', 'unpublished', 'coba-membuat-sebuah-judul');
@@ -333,7 +319,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`id_user`, `nama`, `username`, `password`, `hp`, `level`, `email`, `blokir`, `status`, `aswo`, `tgl_lahir`, `jenis_kelamin`, `profesi`, `alamat`, `kabupaten`, `provinsi`, `foto`, `tgl_registrasi`, `role_id`) VALUES
 	(1, 'Administrator', 'admin', 'ee11cbb19052e40b07aac0ca060c23ee', '', 1, 'admin@prajasa.com', 'N', 'N', 'dXNlcg~~', '0000-00-00', '', '', '', '', '', '', '0000-00-00 00:00:00', 1),
 	(2, 'Alif Akbar Fitrawan', 'alifable', 'ee11cbb19052e40b07aac0ca060c23ee', '085646421106', 2, 'alif@alif.com', 'N', 'N', '', '0000-00-00', '', '', '', '', '', '', '0000-00-00 00:00:00', 2),
-	(5, 'Alif Akbar Fitrawan', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'nohp', 2, 'alifable@gmail.com', 'N', 'N', '', '2014-08-01', '', 'profesi', 'alamat rumah', 'kota', 'provinsi', '201408121136565Penguins.jpg', '0000-00-00 00:00:00', 2);
+	(5, 'Alif Akbar Fitrawan 2', 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'nohp', 2, 'alifable@gmail.com', 'N', 'N', '', '2014-08-01', '', 'profesi', 'alamat rumah', 'kota', 'provinsi', '201408121136565Penguins.jpg', '0000-00-00 00:00:00', 2);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

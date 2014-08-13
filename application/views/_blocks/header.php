@@ -29,7 +29,11 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
             <![endif]-->
-
+<?php
+$ambil = $this->db->query("
+select * from statis_page where status = 'published'
+");
+?>
             <header id="header">
                 <div class="container">
                     <div class="row">
@@ -86,18 +90,36 @@
                                     </ul>
                                 </li>
 
-                                <li class="dropdown">
-                                    <a href="tentang.html">Tentang Kami</a>
+                               <?php 
+							   if ($ambil->num_rows() > 0) {
+								foreach ($ambil->result() as $data) { ?>
+								 <li class="dropdown">
+                                    <a href="<?php echo base_url()?>pages/<?php echo $data->slug?>"><?php echo $data->menu_title?></a>
                                 </li>
+								
+								<?php 
+								}
+								}
+							   ?>
+								
                                 <?php
-                                if($this->auth->is_logged_in()) { ?>
+                                if($this->auth->is_logged_in()) { 
+								if($this->session->userdata('level') == 1) {
+								?>
+								<li>
+                        <a href="<?php echo base_url('digidu/profile'); ?> "><i class="fa fa-user"></i>&nbsp;&nbsp;<?php echo $this->session->userdata('username') ?></a>
+                    </li>
+					<li>
+                        <a href="<?php echo base_url('blog/blog/index'); ?> ">Dashboard</a>
+                    </li>
+								<?php } else { ?>
                     <li>
                         <a href="<?php echo base_url('digidu/profile'); ?> "><i class="fa fa-user"></i>&nbsp;&nbsp;<?php echo $this->session->userdata('username') ?></a>
                     </li>
 					<li>
                         <a href="<?php echo base_url('digidu/logout'); ?> ">Keluar</a>
                     </li>
-					<?php } else {  ?>
+					<?php } } else {  ?>
 					<li>
                         <a href="<?php echo base_url('digidu/login'); ?> ">Login </a>
                     </li>

@@ -244,9 +244,9 @@ class Admin extends CI_Controller {
         $this->data['categories'] = $this->admin_model->category_get_all();
         $this->data['title']   = 'Admin Category View :: '.CIBB_TITLE;
 		$this->data['menu']  = $this->usermodel->get_menu_for_level($level);
-        // $this->load->view('_blocks/header_admin', $this->data);
+       
 		$this->load->view('_blocks/header_admin', $this->data);
-        //$this->load->view('admin/sidebar');
+      
         $this->load->view('admin/category_view');
        $this->load->view('_blocks/footer_admin');
     }
@@ -284,7 +284,7 @@ class Admin extends CI_Controller {
     public function category_delete($category_id)
     {
         $this->db->delete(TBL_CATEGORIES, array('id' => $category_id));
-        $this->session->set_userdata('tmp_success_del', 1);
+        $this->session->set_userdata('tmp_success_del', '1');
         redirect('forum/admin/category_view');
     }
     // end category function

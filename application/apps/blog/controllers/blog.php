@@ -13,6 +13,7 @@ class blog extends CI_Controller {
 	
 	public function index($limit = 0)
 	{	
+		
 		$level = $this->session->userdata('level');		
 		$id_user = $this->session->userdata('id_user');
 		
@@ -26,9 +27,14 @@ class blog extends CI_Controller {
 			);
 		
 		
+		if ($level == 1){
 
 		$this->load->view('vblog/index',$data);
-		
+		}
+		else
+		{
+		redirect(base_url());
+		}
 
 
 	}
@@ -98,7 +104,15 @@ class blog extends CI_Controller {
 			'kategori' => $this->blog_model->get_kategori_blog(),
 			);
 
+		if ($level == 1){
+
 		$this->load->view('vblog/new_post',$data);
+		}
+		else
+		{
+		redirect(base_url());
+		}
+		
 		
 	}
 

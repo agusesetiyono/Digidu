@@ -39,6 +39,7 @@
 */
 $route['default_controller'] = "digidu";
 $route['post/(:any)'] = 'blog/learning/post/$1';
+$route['pages/(:any)'] = 'blog/page/pages/$1';
 $route['404_override'] = '';
 
 

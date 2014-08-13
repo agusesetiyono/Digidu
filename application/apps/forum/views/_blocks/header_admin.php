@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title><?php if (isset($page_title)) echo strip_tags($page_title) . ' | '; ?></title>
+      <title>Halaman Administrator</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -12,7 +12,6 @@
         <link href="<?php echo base_url(); ?>/assets/css/sticky-footer-navbar.css" rel="stylesheet">  
         <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans' rel='stylesheet' type='text/css'>
         <link href="<?php echo base_url(); ?>/assets/css/styles.css" rel="stylesheet">
-		 <script src="<?php echo base_url(); ?>resources/bootstrap/js/jquery-1.7.2.min.js"></script>
         <!--[if lt IE 9]>
           <script src="/assets/js/html5shiv.js"></script>
           <script src="/assets/js/respond.min.js"></script>
@@ -54,8 +53,16 @@
                                         <li> <a href="<?php echo base_url()?><?php echo $row->menu_uri ?>"><?php echo $row->menu_nama ?></a></li> 
                                         <?php } ?> 
 
-                                       <li> <a href="<?php echo base_url()?>forum/admin/thread_view">Forum Thread</a></li>
-<li> <a href="<?php echo base_url()?>forum/admin/category_view">Forum Kategori</a></li>
+										<li> <a href="<?php echo base_url()?>forum/admin/thread_view">Forum Thread</a></li>
+										<li> <a href="<?php echo base_url()?>forum/admin/category_view">Forum Kategori</a></li>
+										
+										<li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="<?php echo base_url('blog/page'); ?>">List page</a></li>   
+                                                <li><a href="<?php echo base_url('blog/page/create'); ?>">Create page</a></li>
+                                            </ul>
+                                        </li> 
                                 </ul>
                                 <ul class="nav navbar-nav pull-right">
                                     <li id="login-name"><a title="Last login: <?php echo "";?>"><i class="fa fa-user"></i> <?php echo $this->session->userdata('nama') ?></a></li>
