@@ -79,11 +79,21 @@
                         <a href="tentang.html">Tentang Kami</a>
                     </li>
 					<?php
-if($this->auth->is_logged_in()) { ?>
+					if($this->auth->is_logged_in()) { ?>
                     <li>
-                        <a href="<?php echo base_url('digidu/profile'); ?> "><i class="fa fa-user"></i>&nbsp;&nbsp;Akun Saya </a>
+                        <a href="<?php echo base_url('digidu/profile'); ?> "><i class="fa fa-user"></i>&nbsp;&nbsp;<?php echo $this->session->userdata('username') ?></a>
                     </li>
-<?php } ?>
+					<li>
+                        <a href="<?php echo base_url('digidu/logout'); ?> ">Keluar</a>
+                    </li>
+					<?php } else {  ?>
+					<li>
+                        <a href="<?php echo base_url('digidu/login'); ?> ">Login </a>
+                    </li>
+					<li>
+                        <a href="<?php echo base_url('digidu/register'); ?> ">Daftar </a>
+                    </li>
+					<?php } ?>
                 </ul>
             </div>
 
