@@ -14,6 +14,10 @@
                             <?php if ($type == 'category'): ?>
                             <li>
                                 <a href="<?php echo site_url('forum/thread'); ?>">Home</a>
+								<?php
+								if($this->auth->is_logged_in()) { ?>
+								<a href="<?php echo site_url('forum/thread/create'); ?>">| Create Thread</a>
+								<?php } ?>
                                 <span class="divider">/</span>
                             </li>
                             <?php $cat_total = count($cat); foreach ($cat as $key => $c): ?>
@@ -26,7 +30,11 @@
                             <?php endforeach; ?>
                             <?php else: ?>
                             <li>
-                                <a href="<?php echo site_url('forum/thread'); ?>">Home</a>
+                                <a href="<?php echo site_url('forum/thread'); ?>">Home</a> 
+								<?php
+								if($this->auth->is_logged_in()) { ?>
+								<a href="<?php echo site_url('forum/thread/create'); ?>">| Create Thread</a>
+								<?php } ?>
                             </li>
                             <?php endif; ?>
                         </ul>

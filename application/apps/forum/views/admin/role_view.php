@@ -1,4 +1,6 @@
-<div class="span10">  
+<div class="container">
+    <div class="row">
+        <div class="col-md-10"> 
     <div class="page-header">
         <h1>List of Roles</h1>
     </div>
@@ -213,4 +215,6 @@
         </tbody>
         </table>
     </div>
+</div>
+</div>
 </div>

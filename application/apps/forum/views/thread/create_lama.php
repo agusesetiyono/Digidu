@@ -1,10 +1,3 @@
-<link href='<?php echo base_url('assets/css/summernote.css')?>' rel="stylesheet">
- <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.2.js"></script>
-<style>
-    .note-editor .note-editable{
-        background-color: #fff;
-    }
-</style>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -64,7 +57,7 @@
 
                 <div class="form-group">
                     <label>First Post</label>
-                    <textarea name="row_post[post]" id="firstpost" class="summernote" rows="8" class="form-control"></textarea>
+                    <textarea name="row_post[post]" id="firstpost"  rows="8" class="form-control"></textarea>
                 </div>
 
                 <div class="form-group">
