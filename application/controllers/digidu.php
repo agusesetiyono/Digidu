@@ -216,7 +216,7 @@ class Digidu extends CI_Controller {
 	'nama'=>$post['nama'],
 	'username' => $post['username'],
 	'email' => $post['email'],
-	'password' => $post['password'],
+	'password' => MD5($post['password']),
 	);
 	}
 	else {

@@ -21,9 +21,6 @@
         <link href="<?php echo base_url(); ?>assets/css/main.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>assets/css/responsive.css" rel="stylesheet">
 
-    <script src="<?php echo base_url(); ?>resources/bootstrap/js/jquery-1.7.2.min.js"></script>
-    <script src="<?php echo base_url(); ?>resources/bootstrap/js/bootstrap.min.js"></script>
-
         <!--[if lt IE 9]>
             <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script>
         <![endif]-->
@@ -82,14 +79,30 @@
                         <a href="tentang.html">Tentang Kami</a>
                     </li>
 					<?php
-if($this->auth->is_logged_in()) { ?>
+					if($this->auth->is_logged_in()) { ?>
                     <li>
-                        <a href="<?php echo base_url('digidu/profile'); ?> "><i class="fa fa-user"></i>&nbsp;&nbsp;Akun Saya </a>
+                        <a href="<?php echo base_url('digidu/profile'); ?> "><i class="fa fa-user"></i>&nbsp;&nbsp;<?php echo $this->session->userdata('username') ?></a>
                     </li>
-<?php } ?>
+					<li>
+                        <a href="<?php echo base_url('digidu/logout'); ?> ">Keluar</a>
+                    </li>
+					<?php } else {  ?>
+					<li>
+                        <a href="<?php echo base_url('digidu/login'); ?> ">Login </a>
+                    </li>
+					<li>
+                        <a href="<?php echo base_url('digidu/register'); ?> ">Daftar </a>
+                    </li>
+					<?php } ?>
                 </ul>
             </div>
 
         </div>
     </div>
 </header>
+
+	
+<!--
+<script src="<?php echo base_url(); ?>assets/css/jquery-ui.css"></script>
+ <script src="<?php echo base_url(); ?>assets/js/jquery-1.10.2.js"></script>
+ <script src="<?php echo base_url(); ?>assets/js/jquery-ui.js"></script> !-->
