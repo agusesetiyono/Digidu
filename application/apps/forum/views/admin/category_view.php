@@ -13,7 +13,10 @@
                 </div>
             <?php endif; ?>
 
+<p><?php echo anchor('forum/admin/category_create', 'Create Category', array('class' => 'btn btn-default')); ?>
+					&nbsp; 
 
+				</p>
             <table class="table table-striped">
                 <thead>
                     <tr>

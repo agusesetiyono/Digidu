@@ -12,6 +12,7 @@
         <link href="<?php echo base_url(); ?>/assets/css/sticky-footer-navbar.css" rel="stylesheet">  
         <link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans' rel='stylesheet' type='text/css'>
         <link href="<?php echo base_url(); ?>/assets/css/styles.css" rel="stylesheet">
+		 <script src="<?php echo base_url(); ?>resources/bootstrap/js/jquery-1.7.2.min.js"></script>
         <!--[if lt IE 9]>
           <script src="/assets/js/html5shiv.js"></script>
           <script src="/assets/js/respond.min.js"></script>

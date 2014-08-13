@@ -201,6 +201,9 @@ class Admin extends CI_Controller {
     // start category function
     public function category_create()
     {
+	$level = $this->session->userdata('level');		
+    	$id_user = $this->session->userdata('id_user');
+		
         if ($this->input->post('btn-create')) {
             $this->admin_model->category_create();
             if ($this->admin_model->error_count != 0) {
@@ -217,13 +220,13 @@ class Admin extends CI_Controller {
             $this->session->unset_userdata('tmp_success');
             $this->data['tmp_success'] = 1;
         }
-        
+        $this->data['menu']  = $this->usermodel->get_menu_for_level($level);
         $this->data['categories'] = $this->admin_model->category_get_all();
-        $this->data['title']   = 'Admin Category Create :: '.CIBB_TITLE;
-        $this->load->view('header', $this->data);
-        $this->load->view('admin/sidebar');
-        $this->load->view('admin/category_create');
-        $this->load->view('footer');
+        $this->data['sub_judul']   = 'Admin Category Create :: '.CIBB_TITLE;
+       // $this->load->view('header', $this->data);
+       $this->load->view('_blocks/header_admin', $this->data);
+        $this->load->view('admin/kategori_baru');
+        $this->load->view('_blocks/footer_admin');
     }
     
     public function category_view()
@@ -241,7 +244,7 @@ class Admin extends CI_Controller {
         $this->data['categories'] = $this->admin_model->category_get_all();
         $this->data['title']   = 'Admin Category View :: '.CIBB_TITLE;
 		$this->data['menu']  = $this->usermodel->get_menu_for_level($level);
-         $this->load->view('_blocks/header_admin', $this->data);
+        // $this->load->view('_blocks/header_admin', $this->data);
 		$this->load->view('_blocks/header_admin', $this->data);
         //$this->load->view('admin/sidebar');
         $this->load->view('admin/category_view');

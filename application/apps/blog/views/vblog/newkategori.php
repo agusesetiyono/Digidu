@@ -6,8 +6,7 @@
 	<div class="content">
 		<div class="row">
 			<div class="span9">
-				
-				
+			
 				<?php echo form_open($post_url, array('class' => 'well'));?>
 					<div class="input-prepend">
 						<input type="text" class="input-large" name="nama_kategori" placeholder="Nama Kategori"  />
