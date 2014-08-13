@@ -34,14 +34,11 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12 text-right top-user-status">
-                            <!--  
-                            <a href=""><i class="fa fa-mortar-board"></i> Daftar</a> | 
-                            <a href=""><i class="fa fa-child"></i> Login</a>
-                            -->
-                          
+                           
+                          <!--
                             <a href=""><i class="fa fa-user"></i> agusesetiyono</a> | 
                             <a href=""><i class="fa fa-sign-out"></i> Logout</a>
-                            
+                            !-->
                         </div>
                     </div>
                 </div>  
@@ -94,23 +91,6 @@
                                 </li>
                                 <?php
                                 if($this->auth->is_logged_in()) { ?>
-                                <li>
-                                    <a href="<?php echo base_url('digidu/profile'); ?> "><i class="fa fa-user"></i>&nbsp;&nbsp;Akun Saya </a>
-                                </li>
-                                <?php } ?>
-                            </ul>
-                        </div>
-
-<<<<<<< HEAD
-                    </div>
-                </div>
-            </header>
-=======
-                    <li class="dropdown">
-                        <a href="tentang.html">Tentang Kami</a>
-                    </li>
-					<?php
-					if($this->auth->is_logged_in()) { ?>
                     <li>
                         <a href="<?php echo base_url('digidu/profile'); ?> "><i class="fa fa-user"></i>&nbsp;&nbsp;<?php echo $this->session->userdata('username') ?></a>
                     </li>
@@ -125,10 +105,13 @@
                         <a href="<?php echo base_url('digidu/register'); ?> ">Daftar </a>
                     </li>
 					<?php } ?>
-                </ul>
-            </div>
->>>>>>> 1eb22083685d74550cbfc6ea8d3472c77514d8a5
+                            </ul>
+                        </div>
 
+
+                    </div>
+                </div>
+            </header>
 
 <!--
 <script src="<?php echo base_url(); ?>assets/css/jquery-ui.css"></script>

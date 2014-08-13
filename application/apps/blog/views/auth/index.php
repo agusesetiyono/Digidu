@@ -28,8 +28,19 @@
 			<td><?php echo $user->nama;?></td>
 			<td><?php echo $user->username;?></td>
 			<td><?php echo $user->email;?></td>
-			<td><?php echo $user->status;?></td>
-			<td><?php echo anchor("auth/edit_user/".$user->id_user, 'Edit', array('class' => 'btn btn-primary')) ;?></td>
+			<td><?php 
+
+			if ($user->status == 'N')
+			{
+			echo "Aktif";
+			}
+			else
+			{
+			echo "Blokir";
+			}
+			
+			?></td>
+			<td><?php echo anchor("blog/manage_user/edit_user/".$user->id_user, 'Edit', array('class' => 'btn btn-primary')) ;?></td>
 		</tr>
 	<?php } ?>
     </tbody>
