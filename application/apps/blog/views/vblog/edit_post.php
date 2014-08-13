@@ -1,20 +1,4 @@
-<<<<<<< HEAD
 <?php $this->load->view('_blocks/header_admin'); ?>
-<script src='<?php echo base_url('assets/redactor/lib/jquery-1.7.min.js')?>'></script>
-<script src='<?php echo base_url('assets/redactor/redactor/redactor.js')?>'></script>
-<link href='<?php echo base_url('assets/redactor/css/style.css')?>' rel="stylesheet">
-<link href='<?php echo base_url('assets/redactor/redactor/css/redactor.css')?>' rel="stylesheet">
-<script type="text/javascript"> 
-	$(document).ready(
-		function()
-		{
-			$('#redactor').redactor({ imageUpload: './assets/upload.php' });
-		}
-		);
-</script>		
-
-
-<?php $this->load->view('_blocks/header'); ?>
 <link href='<?php echo base_url('assets/css/summernote.css')?>' rel="stylesheet">
 <style>
 	.note-editor .note-editable{
