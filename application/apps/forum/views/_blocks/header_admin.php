@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-      <title>Halaman Administrator</title>
+        <title>Halaman Administrator</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
@@ -32,31 +32,44 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <span class="h1"><a class="navbar-brand" href="<?php echo base_url(); ?>"> <?php if (isset($site_name)) echo $site_name; else echo "DIGIDU";?></a></span>
+                        <span class="h1"><a class="navbar-brand" href="<?php echo base_url('blog/welcome'); ?>"> <?php if (isset($site_name)) echo $site_name; else echo "DIGIDU";?></a></span>
                     </div>
 
                     <div class="collapse navbar-collapse">
                         <?php if($this->auth->is_logged_in()) { ?>
                             <?php if ($this->session->userdata('level') == 1) { ?>  
-                                    <ul class="nav navbar-nav"> <!--
-                                      <li><a href="#contact">Contact</a></li>//-->               
+                                    <ul class="nav navbar-nav">              
                                         <li class="dropdown">
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Users <b class="caret"></b></a>
                                             <ul class="dropdown-menu">
                                                 <li><a href="<?php echo base_url('blog/manage_user'); ?>">Manage users</a></li>   
                                                 <li><a href="<?php echo base_url('blog/manage_user/create'); ?>">Create user</a></li>
-												 <li><a href="<?php echo base_url('forum/admin/role_view'); ?>">Rule Forum</a></li>
+                                                 <li><a href="<?php echo base_url('forum/admin/role_view'); ?>">Rule Forum</a></li>
                                             </ul>
                                         </li> 
-                                        <?php
-                                        foreach($menu->result() as $row){ ?>
-                                        <li> <a href="<?php echo base_url()?><?php echo $row->menu_uri ?>"><?php echo $row->menu_nama ?></a></li> 
-                                        <?php } ?> 
 
-										<li> <a href="<?php echo base_url()?>forum/admin/thread_view">Forum Thread</a></li>
-										<li> <a href="<?php echo base_url()?>forum/admin/category_view">Forum Kategori</a></li>
-										
-										<li class="dropdown">
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <?php
+                                                foreach($menu->result() as $row){ ?>
+                                                <li> <a href="<?php echo base_url()?><?php echo $row->menu_uri ?>"><?php echo $row->menu_nama ?></a></li> 
+                                                <?php } ?> 
+                                            </ul>
+                                        </li>
+
+                                       
+
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Forum <b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li> <a href="<?php echo base_url()?>forum/admin/thread_view">Forum Thread</a></li>
+                                                <li> <a href="<?php echo base_url()?>forum/admin/category_view">Forum Kategori</a></li>
+                                            </ul>
+                                        </li>
+
+                                        
+                                        <li class="dropdown">
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
                                             <ul class="dropdown-menu">
                                                 <li><a href="<?php echo base_url('blog/page'); ?>">List page</a></li>   

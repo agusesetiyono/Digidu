@@ -24,7 +24,7 @@
                     <div class="row">
                     	<div class="col-md-5">
 		                   <?php $attributes = array('id' => 'login', 'name' => 'login');?>
-							<?php echo form_open("blog/home/login", array('class' => 'form-horizontal')); ?>
+							<?php echo form_open("blog/home/login", array('class' => '')); ?>
 
 		                        <div class="form-group">
 		                        	<label for="">Username </label>
@@ -37,23 +37,25 @@
 		                        <div class="form-group" style="margin-top: 40px;">
 		                           <input class="btn btn-primary btn-large" name="btn-login" type="submit" value="LOGIN" />
 		                        </div>
-		                   <?php echo form_close(); ?>
+		                    <?php echo form_close(); ?>
+
 							<?php
-						if(isset($login_info))
-{
-	echo "<span style='background-color:#eee;padding:3px;'>";
-	echo $login_info;
-	echo '</span>';
-}
-						?>
-						
+    						if(isset($login_info)){ ?>
+                            <div class="alert alert-danger fade in" role="alert">
+                                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                                <?php echo $login_info; ?>
+                            </div>
+                            <?php }?>
+
+                        
+                    						
                     	</div>
                     </div>
                 </div>
             </div>
-            <?php $this->load->view('_blocks/sidebar'); ?>
+            <?php $this->load->view('_blocks/sidebar_blog'); ?>
         </div>
     </div>
 </section>
 
-<?php $this->load->view('_blocks/footer'); ?>
+<?php $this->load->view('_blocks/footer_blog'); ?>

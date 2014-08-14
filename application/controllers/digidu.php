@@ -33,7 +33,7 @@ class Digidu extends CI_Controller {
 			if($success)
 			{		
 				if ( $this->session->userdata('level') == 1){
-				redirect('blog/blog/index');
+				redirect('blog/welcome');
 				}
 				elseif ($this->session->userdata('level') == 2){
 				redirect(base_url());

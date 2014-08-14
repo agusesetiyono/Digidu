@@ -47,16 +47,16 @@
                                 </div>
                             </div>
                             <?php endforeach; ?>
-							<?php else: ?>
-							<h4><img src="<?php echo base_url().'assets/img/page.png'?>"><i> Belum ada data!</i></h4><br>
-							<?php endif;?>
+              							<?php else: ?>
+              							<h4><img src="<?php echo base_url().'assets/img/page.png'?>"><i> Belum ada data!</i></h4><br>
+              							<?php endif;?>
 
-							<?php if(isset($limit))
-								{
-									$next=($limit+5); $back=($limit-5); 
-									if($back<0){ $back=0;}
-								} 
-							?>
+              							<?php if(isset($limit))
+              								{
+              									$next=($limit+5); $back=($limit-5); 
+              									if($back<0){ $back=0;}
+              								} 
+              							?>
 
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                         </ul>
                     </div>
                  </div>
-				<?php $this->load->view('_blocks/sidebar_blog'); ?>
+				        <?php $this->load->view('_blocks/sidebar_blog'); ?>
 
             </div>
         </div>

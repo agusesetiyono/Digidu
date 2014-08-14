@@ -10,7 +10,7 @@
 					<button class="btn btn-alt" data-toggle="modal" data-target="#login-modal">LOGIN</button>
 				</div>
 				<img src="<?php base_url(); ?>assets/img/school.png" class="slider-hill" alt="slider image">
-				<img src="<?php base_url(); ?>assets/img/digidu_learn_child.png" height="264" width="300" class="slider-house" alt="slider image">
+				<img src="<?php base_url(); ?>assets/img/char.png" height="264" width="300" class="slider-house" alt="slider image">
 				<img src="<?php base_url(); ?>assets/img/sun.png" class="slider-sun" alt="slider image">
 				<img src="<?php base_url(); ?>assets/img/birds1.png" class="slider-birds1" alt="slider image">
 				<img src="<?php base_url(); ?>assets/img/birds2.png" class="slider-birds2" alt="slider image">

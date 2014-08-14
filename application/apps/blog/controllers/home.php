@@ -37,8 +37,6 @@ class Home extends CI_Controller
 		$this->form_validation->set_rules('username', 'Username', 'trim|required');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required');
 		$this->form_validation->set_error_delimiters(' <span style="color:#FF0000">', '</span>');
-		
-		
 
 		if ($this->form_validation->run() == FALSE)
 		{
@@ -52,14 +50,9 @@ class Home extends CI_Controller
 			if($success)
 			{		
 				if ( $this->session->userdata('level') == 1){
-				redirect('blog/manage_user/index');
+					redirect('blog/welcome');
 				}
-				elseif ($this->session->userdata('level') == 2){
-				redirect('blog/cigd/registrasi');
-				}
-				else {
-				redirect('blog/cpenilaian/reg_irja');
-				}
+				
 			}
 			
 			else
